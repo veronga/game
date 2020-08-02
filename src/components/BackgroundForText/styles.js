@@ -3,10 +3,10 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    width: 210,
-    height: 80,
-    backgroundColor: '#623F9C',
-    borderRadius: 35,
+    width: 320,
+    height: 225,
+    backgroundColor: '#F8F8F9',
+    borderRadius: 20,
     justifyContent: 'center'
   },
   titleStyle: {
@@ -14,6 +14,6 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     alignItems: 'center',
     textAlign: 'center',
-    color: '#FFFFFF',
+    color: '#000000',
   },
 });

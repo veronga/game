@@ -1,9 +1,17 @@
+import { AppRegistry } from 'react-native';
 import { getStorybookUI, configure } from '@storybook/react-native';
+
 import { loadStories } from './storyLoader';
 
+import './rn-addons';
+
 configure(() => {
-  loadStories()
+  loadStories();
 }, module);
 
-const StorybookUI = getStorybookUI({ port: 7007, host: 'localhost' });
-export default StorybookUI;
+
+const StorybookUIRoot = getStorybookUI({});
+
+AppRegistry.registerComponent('game', () => StorybookUIRoot);
+
+export default StorybookUIRoot;
