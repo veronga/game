@@ -13,3 +13,5 @@ export default function Button(props) {
        <Text style={titleStyle}>{title}</Text>
     </TouchableOpacity>
   )}
+
+ 
