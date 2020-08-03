@@ -1,11 +1,11 @@
 import React from 'react';
-import { TouchableOpacity, Text, Image } from "react-native";
+import { TouchableOpacity, Image } from "react-native";
+import PropTypes from 'prop-types';
 
 import styles from './styles';
 
 
-export default function Button(props) {
-    const { onPress, imagePath } = props;
+export default function Button( {onPress, imagePath}) {
     const { container, imgStyles } = styles;
 
     return (
@@ -17,3 +17,9 @@ export default function Button(props) {
         </TouchableOpacity>
     )
 }
+
+Button.propTypes = {
+    imagePath: PropTypes.string,
+    onPress: PropTypes.func
+  };
+  
