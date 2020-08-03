@@ -4,8 +4,7 @@ import {  TouchableOpacity, Text } from "react-native";
 import styles from './styles';
 
 
-export default function Button(props) {
-    const {title,onPress} = props;
+export default function Button(title,onPress) {
     const { container,titleStyle} = styles;
     
   return (

@@ -1,11 +1,10 @@
 import React from 'react';
-import { TouchableOpacity, Text, Image } from "react-native";
+import { TouchableOpacity, Image } from "react-native";
 
 import styles from './styles';
 
 
-export default function Button(props) {
-    const { onPress, imagePath } = props;
+export default function Button( onPress, imagePath) {
     const { container, imgStyles } = styles;
 
     return (
