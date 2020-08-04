@@ -20,6 +20,6 @@ export default function Button( {onPress, imagePath}) {
 
 Button.propTypes = {
     imagePath: PropTypes.string,
-    onPress: PropTypes.func
+    onPress: PropTypes.func.isRequired
   };
   
