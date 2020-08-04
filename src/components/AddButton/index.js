@@ -20,5 +20,5 @@ export default function AddButton({onPress}) {
 
 AddButton.propTypes = {
   title: PropTypes.string,
-  onPress: PropTypes.func,
+  onPress: PropTypes.func.isRequired,
 };

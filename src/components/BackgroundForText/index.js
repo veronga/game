@@ -15,6 +15,6 @@ export default function BackgroundForText ({title}) {
   )}
 
 BackgroundForText.propTypes = {
-    title: PropTypes.string
+    title: PropTypes.string.isRequired
 };
   

@@ -9,6 +9,6 @@ import Input from './index'
 storiesOf('Input', module)
 
 .add('default', () => (
-    <Input  placeholder="Введите имя"  />
+    <Input  placeholder="Введите имя"   />
   ));
-  
+   

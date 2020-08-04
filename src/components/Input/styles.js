@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   firstinputStyle:{
-    width: 320,
+    width: '80%',
     height: 60,
     backgroundColor: '#F8F8F9',
     paddingLeft:20,
