@@ -18,6 +18,7 @@ export default StyleSheet.create({
     borderColor: '#FFA8F2',
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
+    justifyContent: 'center',
   },
   container:{
     width: '75%',
