@@ -9,6 +9,7 @@ function loadStories() {
 	require('../src/components/Button/index.stories');
 	require('../src/components/ImageButton/index.stories');
 	require('../src/components/Input/index.stories');
+	require('../src/components/LeaderBoard/index.stories');
 }
 
 const stories = [
@@ -16,7 +17,8 @@ const stories = [
 	'../src/components/BackgroundForText/index.stories',
 	'../src/components/Button/index.stories',
 	'../src/components/ImageButton/index.stories',
-	'../src/components/Input/index.stories'
+	'../src/components/Input/index.stories',
+	'../src/components/LeaderBoard/index.stories'
 ];
 
 module.exports = {
