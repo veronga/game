@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import styles from './styles';
 
 
-export default function BackgroundForText ({title}) { 
+export default function TextBackground ({title}) { 
     const { container,titleStyle} = styles;
   return (
     <View style={container} >
@@ -14,7 +14,7 @@ export default function BackgroundForText ({title}) {
     </View>
   )}
 
-BackgroundForText.propTypes = {
+  TextBackground.propTypes = {
     title: PropTypes.string
 };
   
