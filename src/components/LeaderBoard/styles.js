@@ -10,13 +10,14 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  firstContainer: {
+  borderTop: {
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },
-  lastContainer: {
+  borderBottom: {
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
+    borderBottomWidth: 0
   },
   containerPoint: {
     width: 45,

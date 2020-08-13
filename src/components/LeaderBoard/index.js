@@ -1,22 +1,34 @@
 import React from 'react';
-import {  View, Text } from "react-native";
+import {View, Text} from 'react-native';
 import PropTypes from 'prop-types';
-
 
 import styles from './styles';
 
+const {
+  borderBottom,
+  borderTop,
+  container,
+  stylesText,
+  containerPoint,
+  stylesPoint,
+} = styles;
 
-export default function LeaderBoard ({name,point}) { 
-    const { firstContainer,lastContainer, container,stylesText,containerPoint,stylesPoint} = styles;
-  return (
-    <View  >
-       <View style={[firstContainer,container]}><Text style={stylesText} >{name}</Text><View style={containerPoint}><Text style={stylesPoint} >{point}</Text></View></View>
-       <View style={container}><Text style={stylesText}>{name}</Text><View style={containerPoint}><Text style={stylesPoint} >{point}</Text></View></View>
-       <View style={[lastContainer,container]}><Text style={stylesText}>{name}</Text><View style={containerPoint}><Text style={stylesPoint} >{point}</Text></View></View>
-    </View>
-  )}
+export default function LeaderBoard({ players}) {
+  return players.map((item, index, arr) => {
+    const borberStyle =
+      index === 0 ? borderTop : index === arr.length - 1 ? borderBottom : null;
 
-  LeaderBoard.propTypes = {
-    name: PropTypes.string.isRequired,
-    point: PropTypes.number.isRequired
+    return (
+      <View key={item} style={[container, borberStyle]}>
+        <Text style={stylesText}>{item.name}</Text>
+        <View style={containerPoint}>
+          <Text style={stylesPoint}>{item.point}</Text>
+        </View>
+      </View>
+    );
+  });
+}
+
+LeaderBoard.propTypes = {
+  players: PropTypes.string.isRequired,
 };
