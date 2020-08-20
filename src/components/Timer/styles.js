@@ -13,4 +13,8 @@ export default StyleSheet.create({
     color: '#000',
     alignSelf: 'center',
   },
+  imgStyles:{
+    width:50,
+    height:50
+  }
 });
