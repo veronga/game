@@ -4,7 +4,6 @@ import {storiesOf} from '@storybook/react-native';
 import AnimatedBar from './index';
 
 storiesOf('AnimatedBar', module)
-
   .add('дефолт', () => (
-    <AnimatedBar/>
+    <AnimatedBar timer={5} />
   ));
