@@ -1,14 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import {storiesOf} from '@storybook/react-native';
 
+import Input from './index';
 
-import Input from './index'
-
-
-
-storiesOf('Input', module)
-
+storiesOf('components/Input', module)
 .add('default', () => (
-    <Input  placeholder="Введите имя"   />
-  ));
-   
+  <Input placeholder="Введите имя" />
+));

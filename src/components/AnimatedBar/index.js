@@ -9,7 +9,6 @@ const {mainContainer, tamerContainer, imageStyle} = styles;
 export default function AnimatedBar({timer}) {
   const animationRef = useRef(new Animated.Value(timer)).current;
   const [timerState, setTimer] = useState(timer);
-  console.log('AnimatedBar -> timerState', timerState);
 
   useEffect(() => {
     Animated.timing(animationRef, {
@@ -49,7 +48,7 @@ export default function AnimatedBar({timer}) {
         ]}>
         <Image
           style={imageStyle}
-          source={require('../../assets/images/Tamer.png')}
+          source={require('../../assets/images/Timer.png')}
         />
       </Animated.View>
     </View>

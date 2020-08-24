@@ -6,15 +6,14 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-
   textStyles: {
     fontSize: 40,
     fontWeight: 'bold',
     color: '#000',
     alignSelf: 'center',
   },
-  imgStyles:{
-    width:50,
-    height:50
-  }
+  imgStyles: {
+    width: 50,
+    height: 50,
+  },
 });

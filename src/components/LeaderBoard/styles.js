@@ -17,7 +17,7 @@ export default StyleSheet.create({
   borderBottom: {
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
-    borderBottomWidth: 0
+    borderBottomWidth: 0,
   },
   containerPoint: {
     width: 45,

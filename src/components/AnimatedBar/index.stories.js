@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react-native';
 
 import AnimatedBar from './index';
 
-storiesOf('AnimatedBar', module)
-  .add('дефолт', () => (
+storiesOf('components/AnimatedBar', module)
+  .add('default', () => (
     <AnimatedBar timer={5} />
   ));
