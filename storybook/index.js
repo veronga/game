@@ -9,7 +9,11 @@ configure(() => {
   loadStories();
 }, module);
 
-const StorybookUIRoot = getStorybookUI({});
+const StorybookUIRoot = getStorybookUI({
+  port: 7007,
+  host: 'localhost',
+  onDeviceUI: false,
+});
 
 AppRegistry.registerComponent('game', () => StorybookUIRoot);
 

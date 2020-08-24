@@ -13,7 +13,7 @@ const {
   stylesPoint,
 } = styles;
 
-export default function LeaderBoard({ players}) {
+export default function LeaderBoard({players}) {
   return players.map((item, index, arr) => {
     const borberStyle =
       index === 0 ? borderTop : index === arr.length - 1 ? borderBottom : null;
