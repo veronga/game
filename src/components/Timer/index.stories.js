@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import Timer from './index'
 
-storiesOf('Timer', module)
-.add('default view', () => (
+storiesOf('components/Timer', module)
+.add('default', () => (
   <Timer title='5'/>
 ))

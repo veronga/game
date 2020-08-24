@@ -1,15 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import {storiesOf} from '@storybook/react-native';
 
-import ImageButton from './index'
+import ImageButton from './index';
 
-
-
-
-storiesOf('ImageButton', module)
-    .add('minus', () => (
-        <ImageButton imagePath={require('../../assets/images/Minus.png')} />
-    ))
-    .add('plus', () => (
-        <ImageButton imagePath={require('../../assets/images/Plus.png')} />
-    ));
+storiesOf('components/ImageButton', module)
+  .add('minus', () => (
+    <ImageButton imagePath={require('../../assets/images/Minus.png')} />
+  ))
+  .add('plus', () => (
+    <ImageButton imagePath={require('../../assets/images/Plus.png')} />
+  ));

@@ -1,14 +1,13 @@
-import { StyleSheet } from 'react-native';
-
+import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  firstinputStyle:{
+  firstinputStyle: {
     width: '80%',
     height: 60,
     backgroundColor: '#F8F8F9',
-    paddingLeft:20,
+    paddingLeft: 20,
     borderColor: '#000000',
-    borderBottomWidth:1,
-    fontSize: 24
+    borderBottomWidth: 1,
+    fontSize: 24,
   },
 });

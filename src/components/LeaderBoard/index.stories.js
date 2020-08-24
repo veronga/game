@@ -15,7 +15,7 @@ import Modal from './index'
 
 ]
 
-storiesOf('LeaderBoard', module)
+storiesOf('components/LeaderBoard', module)
 
 .add('default', () => (
     <Modal players={players}/>

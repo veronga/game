@@ -3,14 +3,14 @@ import {storiesOf} from '@storybook/react-native';
 
 import AnswerButton from './index';
 
-storiesOf('AnswerButton', module)
-  .add('ответил', () => (
+storiesOf('components/AnswerButton', module)
+  .add('answered', () => (
     <AnswerButton
       title="Ответил(а)"
       custombackgroundColor={{backgroundColor: '#32A574'}}
     />
   ))
-  .add('не ответил', () => (
+  .add('did not answer', () => (
     <AnswerButton
       title="Не ответил(а)"
       custombackgroundColor={{backgroundColor: '#E45B70'}}

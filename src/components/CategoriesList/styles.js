@@ -9,11 +9,9 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     justifyContent: 'center',
   },
-
   borderTop: {
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-   
   },
   borderBottom: {
     borderBottomLeftRadius: 20,
