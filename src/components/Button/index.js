@@ -19,3 +19,7 @@ Button.propTypes = {
   onPress: PropTypes.func.isRequired,
   customStyles: PropTypes.object,
 };
+
+Button.defaultProps = {
+  customStyles: {},
+};
