@@ -7,7 +7,7 @@ export default StyleSheet.create({
     height: 80,
     backgroundColor: '#623F9C',
     borderRadius: 35,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   titleStyle: {
     fontSize: 24,

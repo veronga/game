@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-export default function Button({title, onPress}) {
+export default function Button({title, onPress, customStyles}) {
   const {container, titleStyle} = styles;
 
   return (
-    <TouchableOpacity style={container} onPress={onPress}>
+    <TouchableOpacity style={[container, customStyles]} onPress={onPress}>
       <Text style={titleStyle}>{title}</Text>
     </TouchableOpacity>
   );
@@ -17,4 +17,9 @@ export default function Button({title, onPress}) {
 Button.propTypes = {
   title: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
+  customStyles: PropTypes.object,
+};
+
+Button.defaultProps = {
+  customStyles: {},
 };

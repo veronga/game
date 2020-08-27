@@ -2,18 +2,20 @@ import React from 'react';
 import {View, TextInput} from 'react-native';
 import PropTypes from 'prop-types';
 
+import ImageButton from '../../components/ImageButton';
+
 import styles from './styles';
 
 export default function Input({name, placeholder, onChangeText}) {
-  const {firstinputStyle} = styles;
+  const {container, inputStyles} = styles;
   return (
-    <View>
+    <View style={container}>
       <TextInput
-        style={firstinputStyle}
+        style={inputStyles}
         placeholder={placeholder}
         value={name}
-        onChangeText={onChangeText}
-      />
+        onChangeText={onChangeText}></TextInput>
+      <ImageButton imagePath={require('../../assets/images/Minus.png')} />
     </View>
   );
 }
