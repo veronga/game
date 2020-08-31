@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import {Text, Image} from 'react-native';
 
 import ScreenBackground from '../../components/ScreenBackground';
@@ -23,8 +23,14 @@ export default function StartGame() {
     setShowModal(!isShowModal);
   };
 
+  useCallback(() => {
+    toggleModal
+  }, []);
+
+
+
   return (
-    <ScreenBackground >
+    <ScreenBackground>
       <ModalList isShowModal={isShowModal}>
         <CategoriesList onPress={toggleModal} />
       </ModalList>
