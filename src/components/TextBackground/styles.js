@@ -7,7 +7,7 @@ export default StyleSheet.create({
     backgroundColor: '#F8F8F9',
     borderRadius: 20,
     justifyContent: 'center',
-    marginVertical: 60
+    marginVertical: 60,
   },
   titleStyle: {
     fontSize: 24,
@@ -15,6 +15,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     textAlign: 'center',
     color: '#000000',
-    paddingHorizontal:5
+    paddingHorizontal: 5,
   },
 });
