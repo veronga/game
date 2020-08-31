@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 import styles from './styles';
 import categories from '../../categories.json';
 
-export default function CategoriesList() {
+export default function CategoriesList({onPress}) {
   const {container, stylesText, borderTop, borderBottom} = styles;
 
   return categories.map((category, index, arr) => {
     const borberStyle =
       index === 0 ? borderTop : index === arr.length - 1 ? borderBottom : null;
     return (
-      <TouchableOpacity key={category}>
+      <TouchableOpacity onPress={onPress} key={category}>
         <View style={[container, borberStyle]}>
           <Text style={stylesText}>{category}</Text>
         </View>
@@ -23,4 +23,5 @@ export default function CategoriesList() {
 
 CategoriesList.propTypes = {
   category: PropTypes.string,
+  onPress: PropTypes.func,
 };

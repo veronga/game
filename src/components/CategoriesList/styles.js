@@ -2,12 +2,13 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    width: '75%',
+    width: '80%',
     height: 60,
     backgroundColor: '#E569C0',
     borderColor: '#FFA8F2',
     borderBottomWidth: 1,
     justifyContent: 'center',
+    alignSelf: 'center',
   },
   borderTop: {
     borderTopLeftRadius: 20,
