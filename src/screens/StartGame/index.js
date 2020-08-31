@@ -19,15 +19,9 @@ export default function StartGame() {
   } = styles;
   const [isShowModal, setShowModal] = useState(false);
 
-  const toggleModal = () => {
+  const toggleModal = useCallback(() => {
     setShowModal(!isShowModal);
-  };
-
-  useCallback(() => {
-    toggleModal
   }, []);
-
-
 
   return (
     <ScreenBackground>
