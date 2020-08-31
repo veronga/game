@@ -9,7 +9,7 @@ export default StyleSheet.create({
   textStyles: {
     fontSize: 40,
     fontWeight: 'bold',
-    color: '#000',
+    color: '#FFFFFF',
     alignSelf: 'center',
   },
   imgStyles: {
