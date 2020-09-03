@@ -10,7 +10,7 @@ import AnswerButton from '../../components/AnswerButton';
 
 import styles from './styles';
 
-export default function StartGame({timer}) {
+export default function Game({timer}) {
   const {textStyles, containerButton, imgStyles} = styles;
 
   const [points, setPoints] = useState(null);
@@ -53,6 +53,6 @@ export default function StartGame({timer}) {
   );
 }
 
-StartGame.propTypes = {
+Game.propTypes = {
   timer: PropTypes.number.isRequired,
 };
