@@ -18,6 +18,7 @@ export default StyleSheet.create({
   imgStyles: {
     width: 100,
     height: 100,
-    top: -300,
+    position: 'absolute',
+    marginTop: 300,
   },
 });
