@@ -10,10 +10,14 @@ import AnswerButton from '../../components/AnswerButton';
 
 import styles from './styles';
 
+import zero from '../../assets/images/Zero.png';
+import plusOne from '../../assets/images/Plusone.png';
+
 export default function Game({timer}) {
   const {textStyles, containerButton, imgStyles} = styles;
 
   const [points, setPoints] = useState(null);
+  const animationImg = points === 0 ? zero : plusOne
 
   return (
     <ScreenBackground>
@@ -32,23 +36,15 @@ export default function Game({timer}) {
           onPress={() => setPoints(0)}
         />
       </View>
-      {points === 1 ? (
+      {points !== null && (
         <Animatable.Image
           animation="zoomInUp"
           iterationCount={2}
           direction="alternate"
           style={imgStyles}
-          source={require('../../assets/images/Plusone.png')}
+          source={animationImg}
         />
-      ) : points === 0 ? (
-        <Animatable.Image
-          animation="zoomInUp"
-          iterationCount={2}
-          direction="alternate"
-          style={imgStyles}
-          source={require('../../assets/images/Zero.png')}
-        />
-      ) : null}
+      )}
     </ScreenBackground>
   );
 }
