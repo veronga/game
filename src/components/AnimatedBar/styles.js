@@ -9,6 +9,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     marginTop: 130,
     alignSelf: 'center',
+    marginVertical: 40,
   },
   tamerContainer: {
     width: '100%',
