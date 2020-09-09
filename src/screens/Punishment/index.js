@@ -13,7 +13,7 @@ export default function Punishment() {
   return (
     <ScreenBackground>
       <Image
-        source={require('../../assets/images/beer.jpg')}
+        source={require('../../assets/images/beer.png')}
         style={imgStyles}
       />
       <TextBackground
