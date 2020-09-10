@@ -14,12 +14,6 @@ export default StyleSheet.create({
   },
   customTitleStyles: {
     fontSize: 36,
-    right: 25
   },
-  imageStyle: {
-    width: 65,
-    height: 65,
-    top: -123,
-    left: 80,
-  },
+ 
 });

@@ -8,12 +8,17 @@ export default StyleSheet.create({
     backgroundColor: '#623F9C',
     borderRadius: 35,
     justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   titleStyle: {
     fontSize: 24,
     fontWeight: 'bold',
-    alignItems: 'center',
-    textAlign: 'center',
     color: '#FFFFFF',
+  },
+  imageStyle: {
+    width: 65,
+    height: 65,
+    left: 10
   },
 });
