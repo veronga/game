@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-export default function TextBackground({title}) {
+export default function TextBackground({title, customContainer}) {
   const {container, titleStyle} = styles;
   return (
-    <View style={container}>
+    <View style={[container, customContainer]}>
       <Text style={titleStyle}>{title}</Text>
     </View>
   );
@@ -15,4 +15,9 @@ export default function TextBackground({title}) {
 
 TextBackground.propTypes = {
   title: PropTypes.string.isRequired,
+  customContainer: PropTypes.object,
+};
+
+TextBackground.defaultProps = {
+  customContainer: {},
 };
