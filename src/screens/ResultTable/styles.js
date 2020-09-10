@@ -1,16 +1,19 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  customStylesButton: {
-    marginVertical: 40,
-  },
   textStyles: {
     fontSize: 24,
     fontWeight: 'bold',
     color: '#fff',
-    textAlign: 'center',
-    marginTop: 50,
-    marginBottom: 50,
-    paddingHorizontal: 40,
+    alignSelf: 'center',
+    marginVertical: 50,
   },
+  customStyles: {
+    width: '80%',
+    marginVertical: 50,
+  },
+  customTitleStyles: {
+    fontSize: 36,
+  },
+ 
 });

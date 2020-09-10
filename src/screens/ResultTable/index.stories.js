@@ -1,11 +1,9 @@
-  
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import {storiesOf} from '@storybook/react-native';
 
+import  ResultTable from './index';
 
-import LeaderBoard from './index'
-
- const  players = [ 
+const  players = [ 
   {name:'Влад',point: 4},
   {name:'Вероника',point: 7},
   {name:'Аня',point: 9},
@@ -15,8 +13,7 @@ import LeaderBoard from './index'
 
 ]
 
-storiesOf('components/LeaderBoard', module)
-
+storiesOf('ResultTable', module)
 .add('default', () => (
-    <LeaderBoard players={players}/>
-  ));
+  < ResultTable  players={players} />
+));
