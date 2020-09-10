@@ -10,14 +10,14 @@ export default function Button({
   onPress,
   customStyles,
   customTitleStyles,
-  image,
+  isShowButtonIcon,
 }) {
   const {container, titleStyle,imageStyle} = styles;
 
   return (
     <TouchableOpacity style={[container, customStyles]} onPress={onPress}>
       <Text style={[titleStyle, customTitleStyles]}>{title}</Text>
-      {image && (
+      {isShowButtonIcon && (
         <Animatable.Image
           animation="tada"
           iterationCount={600}
@@ -34,7 +34,7 @@ Button.propTypes = {
   onPress: PropTypes.func.isRequired,
   customStyles: PropTypes.object,
   customTitleStyles: PropTypes.object,
-  image: PropTypes,
+  isShowButtonIcon: PropTypes,
 };
 
 Button.defaultProps = {

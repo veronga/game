@@ -19,7 +19,7 @@ export default function ResultTable({players}) {
         title="Играть"
         customStyles={customStyles}
         customTitleStyles={customTitleStyles}
-        image
+        isShowButtonIcon
       />
     </ScreenBackground>
   );

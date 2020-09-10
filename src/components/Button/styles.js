@@ -19,6 +19,6 @@ export default StyleSheet.create({
   imageStyle: {
     width: 65,
     height: 65,
-    left: 10
+    marginLeft: 10
   },
 });
