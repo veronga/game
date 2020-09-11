@@ -13,7 +13,7 @@ const  players = [
 
 ]
 
-storiesOf('ResultTable', module)
+storiesOf('screens/ResultTable', module)
 .add('default', () => (
   < ResultTable  players={players} />
 ));

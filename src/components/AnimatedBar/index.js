@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
+import clock from '../../assets/images/Timer.png';
+
 const {mainContainer, tamerContainer, imageStyle} = styles;
 
 export default function AnimatedBar({timer}) {
@@ -33,7 +35,7 @@ export default function AnimatedBar({timer}) {
 
   const backgroundColorInterpolate = animationRef.interpolate({
     inputRange: [0, timer],
-    outputRange: ['#CEB225','#7DB715', ],
+    outputRange: ['#CEB225','#7DB715'],
   });
 
   return (
@@ -48,7 +50,7 @@ export default function AnimatedBar({timer}) {
         ]}>
         <Image
           style={imageStyle}
-          source={require('../../assets/images/Timer.png')}
+          source={clock}
         />
       </Animated.View>
     </View>

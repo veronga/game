@@ -3,5 +3,5 @@ import {storiesOf} from '@storybook/react-native';
 
 import Game from './index';
 
-storiesOf('Game', module)
+storiesOf('screens/Game', module)
 .add('default', () => <Game timer={16}/>);

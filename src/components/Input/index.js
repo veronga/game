@@ -6,6 +6,8 @@ import ImageButton from '../../components/ImageButton';
 
 import styles from './styles';
 
+import minus from '../../assets/images/Minus.png';
+
 export default function Input({name, placeholder, onChangeText}) {
   const {container, inputStyles} = styles;
   return (
@@ -15,7 +17,7 @@ export default function Input({name, placeholder, onChangeText}) {
         placeholder={placeholder}
         value={name}
         onChangeText={onChangeText}></TextInput>
-      <ImageButton imagePath={require('../../assets/images/Minus.png')} />
+      <ImageButton imagePath={minus} />
     </View>
   );
 }

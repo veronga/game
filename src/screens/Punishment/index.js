@@ -7,13 +7,15 @@ import Button from '../../components/Button';
 
 import styles from './styles';
 
+import imgBeer from '../../assets/images/beer.png'
+
 export default function Punishment() {
   const {imgStyles, customContainer, customStyles} = styles;
 
   return (
     <ScreenBackground>
       <Image
-        source={require('../../assets/images/beer.png')}
+        source={imgBeer}
         style={imgStyles}
       />
       <TextBackground

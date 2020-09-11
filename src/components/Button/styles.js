@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 
-
 export default StyleSheet.create({
   container: {
     width: '55%',
@@ -10,6 +9,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'center',
+    marginVertical:50
   },
   titleStyle: {
     fontSize: 24,

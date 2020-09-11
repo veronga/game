@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
+import plus from '../../assets/images/Plus.png';
+
 export default function AddButton({onPress}) {
   const {container, titleStyle, imageStyle} = styles;
 
@@ -11,7 +13,7 @@ export default function AddButton({onPress}) {
     <TouchableOpacity style={container} onPress={onPress}>
       <Text style={titleStyle}>Добавить игрока</Text>
       <Image
-        source={require('../../assets/images/Plus.png')}
+        source={plus}
         style={imageStyle}
       />
     </TouchableOpacity>

@@ -13,7 +13,7 @@ export default function ResultTable({players}) {
 
   return (
     <ScreenBackground>
-      <Text style={textStyles}>бубубубубуб</Text>
+      <Text style={textStyles}>Результы</Text>
       <LeaderBoard players={players} />
       <Button
         title="Играть"
