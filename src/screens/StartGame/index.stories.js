@@ -3,5 +3,5 @@ import {storiesOf} from '@storybook/react-native';
 
 import StartGame from './index';
 
-storiesOf(' StartGame', module)
+storiesOf('screens/StartGame', module)
 .add('default', () => <StartGame />);

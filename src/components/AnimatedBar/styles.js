@@ -7,9 +7,9 @@ export default StyleSheet.create({
     borderRadius: 20,
     backgroundColor: '#1F262B',
     justifyContent: 'center',
-    marginTop: 130,
+    marginTop: 100,
     alignSelf: 'center',
-    marginVertical: 40,
+    marginVertical: 50,
   },
   tamerContainer: {
     width: '100%',

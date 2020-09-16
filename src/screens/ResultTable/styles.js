@@ -15,5 +15,4 @@ export default StyleSheet.create({
   customTitleStyles: {
     fontSize: 36,
   },
- 
 });

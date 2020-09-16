@@ -6,8 +6,7 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',
     alignSelf: 'center',
-    marginTop: 40,
-    marginBottom: 40,
+    marginVertical: 50,
   },
   containerButton: {
     width: '100%',
@@ -18,7 +17,5 @@ export default StyleSheet.create({
   imgStyles: {
     width: 100,
     height: 100,
-    position: 'absolute',
-    top: '30%'
   },
 });

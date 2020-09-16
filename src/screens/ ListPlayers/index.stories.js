@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react-native';
 
 import  ListPlayers from './index';
 
-storiesOf(' ListPlayers', module)
+storiesOf('screens/ListPlayers', module)
 .add('default', () => (
   < ListPlayers />
 ));

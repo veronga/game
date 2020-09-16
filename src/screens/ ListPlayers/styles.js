@@ -6,8 +6,7 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',
     alignSelf: 'center',
-    marginTop: 40,
-    marginBottom: 40,
+    marginVertical: 50,
   },
   customStyles: {
     marginTop: 50,

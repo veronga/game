@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
+import play from '../../assets/images/Play.png';
+
+
 export default function Button({
   title,
   onPress,
@@ -21,7 +24,7 @@ export default function Button({
         <Animatable.Image
           animation="tada"
           iterationCount={600}
-          source={require('../../assets/images/Play.png')}
+          source={play}
           style={imageStyle}
         />
       )}
