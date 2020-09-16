@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
@@ -9,7 +9,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical:50
+    marginVertical: 50,
   },
   titleStyle: {
     fontSize: 24,
@@ -19,6 +19,6 @@ export default StyleSheet.create({
   imageStyle: {
     width: 65,
     height: 65,
-    marginLeft: 10
+    marginLeft: 10,
   },
 });

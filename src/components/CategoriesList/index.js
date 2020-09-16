@@ -6,7 +6,6 @@ import styles from './styles';
 import categories from '../../categories.json';
 
 export default function CategoriesList({onPress}) {
-  console.log("CategoriesList -> onPress", onPress)
   const {container, stylesText, borderTop, borderBottom} = styles;
 
   return categories.map((category, index, arr) => {
