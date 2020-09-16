@@ -9,9 +9,9 @@ import styles from './styles';
 import minus from '../../assets/images/Minus.png';
 
 export default function Input({name, placeholder, onChangeText}) {
-  const {container, inputStyles} = styles;
+  const {container, inputStyles,borderTop} = styles;
   return (
-    <View style={container}>
+    <View style={[container, borderTop]}>
       <TextInput
         style={inputStyles}
         placeholder={placeholder}
