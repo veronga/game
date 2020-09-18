@@ -28,8 +28,6 @@ export default function Timer({changeTimer, second, isDecreaseDisabled}) {
 
 Timer.propTypes = {
   second: PropTypes.number.isRequired,
-  onPressPlus: PropTypes.func.isRequired,
-  onPressMinus: PropTypes.func.isRequired,
   isDecreaseDisabled: PropTypes.bool.isRequired,
   changeTimer: PropTypes.func.isRequired,
 };
