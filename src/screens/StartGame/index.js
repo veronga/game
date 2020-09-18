@@ -17,6 +17,8 @@ export default function StartGame() {
     customStylesСategories,
   } = styles;
   const [isShowModal, setShowModal] = useState(false);
+  const [secondStart, setSecondStart] = useState(5);
+  const isDecreaseDisabled = secondStart <= 5;
 
   const toggleModal = useCallback(() => {
     setShowModal(!isShowModal);
@@ -28,7 +30,11 @@ export default function StartGame() {
         <CategoriesList onPress={toggleModal} />
       </ModalList>
       <Text style={textStyles}>Таймер</Text>
-      <Timer title="5"/>
+      <Timer
+        second={secondStart}
+        isDecreaseDisabled={isDecreaseDisabled}
+        changeTimer={setSecondStart}
+      />
       <Button
         title="Выберите категорию"
         customStyles={customStylesСategories}
