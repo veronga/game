@@ -7,16 +7,19 @@ import styles from './styles';
 import plus from '../../assets/images/Plus.png';
 import minus from '../../assets/images/Minus.png';
 
-export default function Timer({onPress, title}) {
+export default function Timer({changeTimer, second, isDecreaseDisabled}) {
   const {container, imgStyles, textStyles} = styles;
 
   return (
     <View style={container}>
-      <TouchableOpacity onPress={onPress}>
+      <TouchableOpacity
+        onPress={() => changeTimer((prevValue) => prevValue + 3)}>
         <Image style={imgStyles} source={plus} />
       </TouchableOpacity>
-      <Text style={textStyles}>{title}</Text>
-      <TouchableOpacity onPress={onPress}>
+      <Text style={textStyles}>{second}</Text>
+      <TouchableOpacity
+        onPress={() => changeTimer((prevValue) => prevValue - 3)}
+        disabled={isDecreaseDisabled}>
         <Image style={imgStyles} source={minus} />
       </TouchableOpacity>
     </View>
@@ -24,6 +27,7 @@ export default function Timer({onPress, title}) {
 }
 
 Timer.propTypes = {
-  title: PropTypes.number.isRequired,
-  onPress: PropTypes.func.isRequired,
+  second: PropTypes.number.isRequired,
+  isDecreaseDisabled: PropTypes.bool.isRequired,
+  changeTimer: PropTypes.func.isRequired,
 };
