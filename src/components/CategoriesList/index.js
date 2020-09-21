@@ -12,7 +12,7 @@ export default function CategoriesList({onPress}) {
     const borberStyle =
       index === 0 ? borderTop : index === arr.length - 1 ? borderBottom : null;
     return (
-      <TouchableOpacity onPress={onPress} key={category}>
+      <TouchableOpacity onPress={() => onPress(category)} key={category}>
         <View style={[container, borberStyle]}>
           <Text style={stylesText}>{category}</Text>
         </View>
