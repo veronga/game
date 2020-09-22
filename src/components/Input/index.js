@@ -8,22 +8,37 @@ import styles from './styles';
 
 import minus from '../../assets/images/Minus.png';
 
-export default function Input({name, placeholder, onChangeText}) {
-  const {container, inputStyles,borderTop} = styles;
+export default function Input({
+  value,
+  placeholder,
+  onChangeText,
+  customStyles,
+  onRemoveButtonPress,
+  isDecreaseDisabled,
+}) {
+  const {container, inputStyles} = styles;
+
   return (
-    <View style={[container, borderTop]}>
+    <View style={[container, customStyles]}>
       <TextInput
         style={inputStyles}
         placeholder={placeholder}
-        value={name}
+        value={value}
         onChangeText={onChangeText}></TextInput>
-      <ImageButton imagePath={minus} />
+      <ImageButton
+        imagePath={minus}
+        onPress={onRemoveButtonPress}
+        isDecreaseDisabled={isDecreaseDisabled}
+      />
     </View>
   );
 }
 
 Input.propTypes = {
-  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   onChangeText: PropTypes.string.isRequired,
+  customStyles: PropTypes.object.isRequired,
+  onRemoveButtonPress: PropTypes.func.isRequired,
+  isDecreaseDisabled: PropTypes.bool.isRequired,
 };

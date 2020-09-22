@@ -11,4 +11,8 @@ export default StyleSheet.create({
   customStyles: {
     marginTop: 50,
   },
+  borderTop: {
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+  },
 });
