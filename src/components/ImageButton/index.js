@@ -4,11 +4,14 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-export default function Button({onPress, imagePath}) {
+export default function Button({onPress, imagePath, isDecreaseDisabled}) {
   const {container, imgStyles} = styles;
 
   return (
-    <TouchableOpacity style={container} onPress={onPress}>
+    <TouchableOpacity
+      style={container}
+      onPress={onPress}
+      disabled={isDecreaseDisabled}>
       <Image style={imgStyles} source={imagePath} />
     </TouchableOpacity>
   );
@@ -17,4 +20,5 @@ export default function Button({onPress, imagePath}) {
 Button.propTypes = {
   imagePath: PropTypes.string,
   onPress: PropTypes.func.isRequired,
+  isDecreaseDisabled: PropTypes.bool.isRequired,
 };
