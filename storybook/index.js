@@ -3,14 +3,12 @@ import {getStorybookUI, configure} from '@storybook/react-native';
 
 import {loadStories} from './storyLoader';
 
-import './rn-addons';
-
 configure(() => {
   loadStories();
 }, module);
 
 const StorybookUIRoot = getStorybookUI({
-  port: 7007,
+  port: '7007',
   host: 'localhost',
   onDeviceUI: false,
 });
