@@ -8,7 +8,7 @@ import Button from '../../components/Button';
 
 import styles from './styles';
 
-export default function ResultTable({players}) {
+export default function ResultTable({players, navigation}) {
   const {textStyles, customStyles, customTitleStyles} = styles;
 
   return (
@@ -20,6 +20,7 @@ export default function ResultTable({players}) {
         customStyles={customStyles}
         customTitleStyles={customTitleStyles}
         isShowButtonIcon
+        onPress={() => navigation.navigation('Questions')}
       />
     </ScreenBackground>
   );
@@ -27,4 +28,5 @@ export default function ResultTable({players}) {
 
 ResultTable.propTypes = {
   players: PropTypes.string.isRequired,
+  navigation: PropTypes.func.isRequired,
 };

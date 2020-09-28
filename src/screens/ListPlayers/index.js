@@ -1,5 +1,6 @@
 import React, {useState, useCallback} from 'react';
 import {Text} from 'react-native';
+import PropTypes from 'prop-types';
 
 import ScreenBackground from '../../components/ScreenBackground';
 import Input from '../../components/Input';
@@ -8,7 +9,7 @@ import Button from '../../components/Button';
 
 import styles from './styles';
 
-export default function ListPlayers() {
+export default function ListPlayers({navigation}) {
   const {textStyles, customStyles, borderTop} = styles;
   const [userInputs, setUserInputs] = useState([{inputValue: ''}]);
   const isDecreaseDisabled = userInputs.length === 2;
@@ -46,7 +47,15 @@ export default function ListPlayers() {
         );
       })}
       <AddButton onPress={addMember} />
-      <Button title="Дальше" customStyles={customStyles} />
+      <Button
+        title="Дальше"
+        customStyles={customStyles}
+        onPress={() => navigation.navigate('StartGame')}
+      />
     </ScreenBackground>
   );
 }
+
+ListPlayers.propTypes = {
+  navigation: PropTypes.func.isRequired,
+};
