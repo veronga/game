@@ -1,12 +1,15 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react-native';
+import {text, withKnobs} from '@storybook/addon-knobs';
+
 
 import AnswerButton from './index';
 
 storiesOf('components/AnswerButton', module)
+  .addDecorator(withKnobs)
   .add('answered', () => (
     <AnswerButton
-      title="Ответил(а)"
+      title={text('title', 'title')}
       custombackgroundColor={{backgroundColor: '#32A574'}}
     />
   ))
