@@ -34,5 +34,5 @@ export default function Punishment({navigation}) {
 }
 
 Punishment.propTypes = {
-  navigation: PropTypes.func,
+  navigation: PropTypes.object.isRequired,
 };

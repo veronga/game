@@ -77,5 +77,5 @@ export default function ListPlayers({navigation}) {
 }
 
 ListPlayers.propTypes = {
-  navigation: PropTypes.func.isRequired,
+  navigation: PropTypes.object.isRequired,
 };

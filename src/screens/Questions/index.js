@@ -29,5 +29,5 @@ export default function Questions({navigation}) {
 }
 
 Questions.propTypes = {
-  navigation: PropTypes.func.isRequired,
+  navigation: PropTypes.object.isRequired,
 };

@@ -32,5 +32,5 @@ export default function ResultTable({players, navigation}) {
 
 ResultTable.propTypes = {
   players: PropTypes.string.isRequired,
-  navigation: PropTypes.func.isRequired,
+  navigation: PropTypes.object.isRequired,
 };
