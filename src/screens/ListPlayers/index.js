@@ -1,5 +1,6 @@
 import React, {useState, useCallback} from 'react';
 import {Text} from 'react-native';
+import PropTypes from 'prop-types';
 
 import ScreenBackground from '../../components/ScreenBackground';
 import Input from '../../components/Input';
@@ -8,15 +9,34 @@ import Button from '../../components/Button';
 
 import styles from './styles';
 
-export default function ListPlayers() {
-  const {textStyles, customStyles, borderTop} = styles;
-  const [userInputs, setUserInputs] = useState([{inputValue: ''}]);
+export default function ListPlayers({navigation}) {
+  const {textStyles, customStyles, borderTop, textError} = styles;
+  const [userInputs, setUserInputs] = useState([
+    {inputValue: ''},
+    {inputValue: ''},
+  ]);
+  const [error, setError] = useState('');
   const isDecreaseDisabled = userInputs.length === 2;
 
   const addMember = useCallback(() => {
     const newList = [...userInputs, {inputValue: ''}];
     setUserInputs(newList);
   }, [userInputs]);
+
+  const checkInputsFilling = userInputs.reduce((acc, current) => {
+    if (current.inputValue.length > 0) {
+      return acc + 1;
+    }
+    return acc;
+  }, 0);
+
+  const navigatingThroughScreens = useCallback(() => {
+    if (checkInputsFilling >= 2) {
+      navigation.navigate('StartGame');
+    } else {
+      setError('Пожалуйста введите как минимум имена двоих участноков');
+    }
+  }, [checkInputsFilling]);
 
   return (
     <ScreenBackground>
@@ -46,7 +66,16 @@ export default function ListPlayers() {
         );
       })}
       <AddButton onPress={addMember} />
-      <Button title="Дальше" customStyles={customStyles} />
+      <Text style={textError}>{error}</Text>
+      <Button
+        title="Дальше"
+        customStyles={customStyles}
+        onPress={navigatingThroughScreens}
+      />
     </ScreenBackground>
   );
 }
+
+ListPlayers.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};

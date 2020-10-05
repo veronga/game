@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import {View, Text} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import PropTypes from 'prop-types';
@@ -13,17 +13,25 @@ import styles from './styles';
 import zero from '../../assets/images/Zero.png';
 import plusOne from '../../assets/images/Plusone.png';
 
-export default function Game({timer}) {
+export default function Game({navigation}) {
   const {textStyles, containerButton, imgStyles} = styles;
 
   const [points, setPoints] = useState(null);
-  const animationImg = points === 0 ? zero : plusOne
+  const animationImg = points === 0 ? zero : plusOne;
+
+  const navigatingThroughScreens = useCallback(() => {
+    if (points === 0) {
+      navigation.navigate('Punishment');
+    } else {
+      navigation.navigate('Questions');
+    }
+  }, [points]);
 
   return (
     <ScreenBackground>
       <Text style={textStyles}>Отвечайте</Text>
       <TextBackground title="Игрок 1, назовите три места где бы вы хотели заняться сексом " />
-      <AnimatedBar timer={timer} />
+      <AnimatedBar timer={16} />
       <View style={containerButton}>
         <AnswerButton
           title="Ответил(а)"
@@ -43,6 +51,7 @@ export default function Game({timer}) {
           direction="alternate"
           style={imgStyles}
           source={animationImg}
+          onAnimationEnd={navigatingThroughScreens}
         />
       )}
     </ScreenBackground>
@@ -50,5 +59,6 @@ export default function Game({timer}) {
 }
 
 Game.propTypes = {
-  timer: PropTypes.number.isRequired,
+  timer: PropTypes.number,
+  navigation: PropTypes.object.isRequired,
 };
