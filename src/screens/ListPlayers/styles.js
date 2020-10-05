@@ -15,4 +15,10 @@ export default StyleSheet.create({
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },
+  textError: {
+    fontSize: 16,
+    color: '#E45B70',
+    textAlign: 'center',
+    padding: 15,
+  },
 });

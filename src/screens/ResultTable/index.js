@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
 import {Text} from 'react-native';
 
@@ -11,6 +11,10 @@ import styles from './styles';
 export default function ResultTable({players, navigation}) {
   const {textStyles, customStyles, customTitleStyles} = styles;
 
+  const navigatingThroughScreens = useCallback(() => {
+    navigation.navigate('Questions');
+  }, []);
+
   return (
     <ScreenBackground>
       <Text style={textStyles}>Результы</Text>
@@ -20,7 +24,7 @@ export default function ResultTable({players, navigation}) {
         customStyles={customStyles}
         customTitleStyles={customTitleStyles}
         isShowButtonIcon
-        onPress={() => navigation.navigation('Questions')}
+        onPress={navigatingThroughScreens}
       />
     </ScreenBackground>
   );

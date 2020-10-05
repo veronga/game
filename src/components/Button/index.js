@@ -7,18 +7,22 @@ import styles from './styles';
 
 import play from '../../assets/images/Play.png';
 
-
 export default function Button({
   title,
   onPress,
   customStyles,
   customTitleStyles,
   isShowButtonIcon,
+  isDisabled,
 }) {
-  const {container, titleStyle,imageStyle} = styles;
+  
+  const {container, titleStyle, imageStyle} = styles;
 
   return (
-    <TouchableOpacity style={[container, customStyles]} onPress={onPress}>
+    <TouchableOpacity
+      style={[container, customStyles]}
+      onPress={onPress}
+      disabled={isDisabled}>
       <Text style={[titleStyle, customTitleStyles]}>{title}</Text>
       {isShowButtonIcon && (
         <Animatable.Image
@@ -37,7 +41,8 @@ Button.propTypes = {
   onPress: PropTypes.func.isRequired,
   customStyles: PropTypes.object,
   customTitleStyles: PropTypes.object,
-  isShowButtonIcon: PropTypes,
+  isShowButtonIcon: PropTypes.bool,
+  isDisabled: PropTypes.bool,
 };
 
 Button.defaultProps = {

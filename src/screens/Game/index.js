@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import {View, Text} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import PropTypes from 'prop-types';
@@ -19,15 +19,13 @@ export default function Game({navigation}) {
   const [points, setPoints] = useState(null);
   const animationImg = points === 0 ? zero : plusOne;
 
-  const AddPoint = () => {
-    setPoints(1);
-    setTimeout(() => navigation.push('Questions'), 2500);
-  };
-
-  const notGetPoint = () => {
-    setPoints(0);
-    setTimeout(() => navigation.push('Punishment'), 2500);
-  };
+  const navigatingThroughScreens = useCallback(() => {
+    if (points === 0) {
+      navigation.navigate('Punishment');
+    } else {
+      navigation.navigate('Questions');
+    }
+  }, [points]);
 
   return (
     <ScreenBackground>
@@ -38,12 +36,12 @@ export default function Game({navigation}) {
         <AnswerButton
           title="Ответил(а)"
           custombackgroundColor={{backgroundColor: '#32A574'}}
-          onPress={AddPoint}
+          onPress={() => setPoints(1)}
         />
         <AnswerButton
           title="Не ответил(а)"
           custombackgroundColor={{backgroundColor: '#E45B70'}}
-          onPress={notGetPoint}
+          onPress={() => setPoints(0)}
         />
       </View>
       {points !== null && (
@@ -53,6 +51,7 @@ export default function Game({navigation}) {
           direction="alternate"
           style={imgStyles}
           source={animationImg}
+          onAnimationEnd={navigatingThroughScreens}
         />
       )}
     </ScreenBackground>

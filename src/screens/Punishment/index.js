@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {Image} from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -13,6 +13,10 @@ import imgBeer from '../../assets/images/beer.png';
 export default function Punishment({navigation}) {
   const {imgStyles, customContainer, customStyles} = styles;
 
+  const navigatingThroughScreens = useCallback(() => {
+    navigation.navigate('Questions');
+  }, []);
+
   return (
     <ScreenBackground>
       <Image source={imgBeer} style={imgStyles} />
@@ -23,7 +27,7 @@ export default function Punishment({navigation}) {
       <Button
         title="Продолжаем"
         customStyles={customStyles}
-        onPress={() => navigation.navigation('Questions')}
+        onPress={navigatingThroughScreens}
       />
     </ScreenBackground>
   );

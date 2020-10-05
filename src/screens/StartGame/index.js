@@ -21,7 +21,7 @@ export default function StartGame({navigation}) {
   const [changeTitle, setChangeTitle] = useState('Выберите категорию');
   const [secondStart, setSecondStart] = useState(5);
 
-  const isDecreaseDisabled = secondStart <= 5;
+  const isDecreaseDisabled = secondStart <= 5 ;
 
   const toggleModal = useCallback(
     (category) => {
@@ -30,6 +30,10 @@ export default function StartGame({navigation}) {
     },
     [isShowModal, changeTitle],
   );
+
+  const navigatingThroughScreens = useCallback(() => {
+    navigation.navigate('Questions');
+  }, []);
 
   return (
     <ScreenBackground>
@@ -53,7 +57,7 @@ export default function StartGame({navigation}) {
         customStyles={customStyles}
         customTitleStyles={customTitleStyles}
         isShowButtonIcon
-        onPress={() => navigation.navigate('Questions')}
+        onPress={navigatingThroughScreens}
       />
     </ScreenBackground>
   );
