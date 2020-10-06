@@ -10,7 +10,8 @@ export default function AnswerButton({title, onPress, custombackgroundColor}) {
   return (
     <TouchableOpacity
       style={[container, custombackgroundColor]}
-      onPress={onPress}>
+      onPress={onPress}
+      activeOpacity={0.5}>
       <Text style={titleStyle}>{title}</Text>
     </TouchableOpacity>
   );

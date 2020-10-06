@@ -22,7 +22,8 @@ export default function Button({
     <TouchableOpacity
       style={[container, customStyles]}
       onPress={onPress}
-      disabled={isDisabled}>
+      disabled={isDisabled}
+      activeOpacity={0.5}>
       <Text style={[titleStyle, customTitleStyles]}>{title}</Text>
       {isShowButtonIcon && (
         <Animatable.Image

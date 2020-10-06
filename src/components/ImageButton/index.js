@@ -11,7 +11,8 @@ export default function Button({onPress, imagePath, isDecreaseDisabled}) {
     <TouchableOpacity
       style={container}
       onPress={onPress}
-      disabled={isDecreaseDisabled}>
+      disabled={isDecreaseDisabled}
+      activeOpacity={0.5}>
       <Image style={imgStyles} source={imagePath} />
     </TouchableOpacity>
   );
