@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-import plus from '../../assets/images/Plus.png';
-import minus from '../../assets/images/Minus.png';
+import plus from 'src/assets/images/Plus.png';
+import minus from 'src/assets/images/Minus.png';
 
 export default function Timer({changeTimer, second, isDecreaseDisabled}) {
   const {container, imgStyles, textStyles} = styles;

@@ -2,11 +2,11 @@ import React from 'react';
 import {View, TextInput} from 'react-native';
 import PropTypes from 'prop-types';
 
-import ImageButton from '../../components/ImageButton';
+import ImageButton from 'src/components/ImageButton';
 
 import styles from './styles';
 
-import minus from '../../assets/images/Minus.png';
+import minus from 'src/assets/images/Minus.png';
 
 export default function Input({
   value,

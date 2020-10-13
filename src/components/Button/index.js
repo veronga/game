@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-import play from '../../assets/images/Play.png';
+import play from 'src/assets/images/Play.png';
 
 export default function Button({
   title,
