@@ -10,10 +10,13 @@ import minus from '../../assets/images/Minus.png';
 export default function Timer({changeTimer, second, isDecreaseDisabled}) {
   const {container, imgStyles, textStyles} = styles;
 
+  const isIncreaseDisabled = second === 35;
+
   return (
     <View style={container}>
       <TouchableOpacity
-        onPress={() => changeTimer((prevValue) => prevValue + 3)}>
+        onPress={() => changeTimer((prevValue) => prevValue + 3)}
+        disabled={isIncreaseDisabled}>
         <Image style={imgStyles} source={plus} />
       </TouchableOpacity>
       <Text style={textStyles}>{second}</Text>
