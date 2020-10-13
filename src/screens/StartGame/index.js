@@ -19,9 +19,6 @@ export default function StartGame({navigation}) {
   } = styles;
   const [isShowModal, setShowModal] = useState(false);
   const [changeTitle, setChangeTitle] = useState('Выберите категорию');
-  const [secondStart, setSecondStart] = useState(5);
-
-  const isDecreaseDisabled = secondStart <= 5 ;
 
   const toggleModal = useCallback(
     (category) => {
@@ -41,11 +38,7 @@ export default function StartGame({navigation}) {
         <CategoriesList onPress={toggleModal} />
       </ModalList>
       <Text style={textStyles}>Таймер</Text>
-      <Timer
-        second={secondStart}
-        isDecreaseDisabled={isDecreaseDisabled}
-        changeTimer={setSecondStart}
-      />
+      <Timer />
 
       <Button
         title={changeTitle}
