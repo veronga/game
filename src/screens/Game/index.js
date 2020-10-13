@@ -59,6 +59,5 @@ export default function Game({navigation}) {
 }
 
 Game.propTypes = {
-  timer: PropTypes.number,
   navigation: PropTypes.object.isRequired,
 };
