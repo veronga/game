@@ -1,8 +1,9 @@
 import React, {useState, useCallback} from 'react';
 import {Text} from 'react-native';
 import PropTypes from 'prop-types';
-
+import {useDispatch} from 'react-redux';
 import {ScreenBackground, Input, AddButton, Button} from 'src/components';
+import {addUsers} from 'src/reducers/usersSlice';
 
 import styles from './styles';
 
@@ -14,6 +15,7 @@ export default function ListPlayers({navigation}) {
   ]);
   const [error, setError] = useState('');
   const isDecreaseDisabled = userInputs.length === 2;
+  const dispatch = useDispatch();
 
   const addMember = useCallback(() => {
     const newList = [...userInputs, {inputValue: ''}];
@@ -30,6 +32,8 @@ export default function ListPlayers({navigation}) {
   const navigatingThroughScreens = useCallback(() => {
     if (checkInputsFilling >= 2) {
       navigation.navigate('StartGame');
+      const users = userInputs.map((item)=> ({name: item.inputValue, score: 0}))
+      dispatch(addUsers(users));
     } else {
       setError('Пожалуйста введите как минимум имена двоих участноков');
     }
