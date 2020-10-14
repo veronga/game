@@ -2,8 +2,7 @@ import React from 'react';
 import {TouchableOpacity, Image, Text, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {increment} from '../../reducers/timerSlice';
-import {decrement} from '../../reducers/timerSlice';
+import {increment, decrement} from 'src/reducers/timerSlice';
 
 import styles from './styles';
 
