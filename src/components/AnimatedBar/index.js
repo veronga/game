@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-import clock from '../../assets/images/Timer.png';
+import clock from 'src/assets/images/Timer.png';
 
 const {mainContainer, tamerContainer, imageStyle} = styles;
 

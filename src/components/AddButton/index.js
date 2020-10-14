@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-import plus from '../../assets/images/Plus.png';
+import plus from 'src/assets/images/Plus.png';
 
 export default function AddButton({onPress}) {
   const {container, titleStyle, imageStyle} = styles;

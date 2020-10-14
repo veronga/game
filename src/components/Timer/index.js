@@ -7,8 +7,8 @@ import {decrement} from '../../reducers/timerSlice';
 
 import styles from './styles';
 
-import plus from '../../assets/images/Plus.png';
-import minus from '../../assets/images/Minus.png';
+import plus from 'src/assets/images/Plus.png';
+import minus from 'src/assets/images/Minus.png';
 
 export default function Timer() {
   const {container, imgStyles, textStyles} = styles;

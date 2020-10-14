@@ -2,9 +2,7 @@ import React, {useCallback} from 'react';
 import {Text} from 'react-native';
 import PropTypes from 'prop-types';
 
-import ScreenBackground from '../../components/ScreenBackground';
-import TextBackground from '../../components/TextBackground';
-import Button from '../../components/Button';
+import {ScreenBackground, TextBackground, Button} from 'src/components';
 
 import styles from './styles';
 

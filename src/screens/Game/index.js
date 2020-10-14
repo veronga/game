@@ -4,15 +4,13 @@ import * as Animatable from 'react-native-animatable';
 import PropTypes from 'prop-types';
 import {useSelector} from 'react-redux';
 
-import ScreenBackground from '../../components/ScreenBackground';
-import TextBackground from '../../components/TextBackground';
-import AnimatedBar from '../../components/AnimatedBar';
-import AnswerButton from '../../components/AnswerButton';
+import {ScreenBackground,TextBackground,AnimatedBar,AnswerButton} from 'src/components';
+
 
 import styles from './styles';
 
-import zero from '../../assets/images/Zero.png';
-import plusOne from '../../assets/images/Plusone.png';
+import zero from 'src/assets/images/Zero.png';
+import plusOne from 'src/assets/images/Plusone.png';
 
 export default function Game({navigation}) {
   const {textStyles, containerButton, imgStyles} = styles;

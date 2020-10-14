@@ -2,11 +2,13 @@ import React, {useState, useCallback} from 'react';
 import {Text} from 'react-native';
 import PropTypes from 'prop-types';
 
-import ScreenBackground from '../../components/ScreenBackground';
-import Timer from '../../components/Timer';
-import Button from '../../components/Button';
-import CategoriesList from '../../components/CategoriesList';
-import ModalList from '../../components/ModalList';
+import {
+  ScreenBackground,
+  Timer,
+  Button,
+  CategoriesList,
+  ModalList,
+} from 'src/components';
 
 import styles from './styles';
 
