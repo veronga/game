@@ -2,10 +2,7 @@ import React, {useState, useCallback} from 'react';
 import {Text} from 'react-native';
 import PropTypes from 'prop-types';
 
-import ScreenBackground from '../../components/ScreenBackground';
-import Input from '../../components/Input';
-import AddButton from '../../components/AddButton';
-import Button from '../../components/Button';
+import {ScreenBackground, Input, AddButton, Button} from 'src/components';
 
 import styles from './styles';
 
