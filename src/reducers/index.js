@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
 
-import todosReducer from './todosSlice';
+import usersReducer from './usersSlice';
 import timerReducer from './timerSlice';
 
 export default combineReducers({
-  todos: todosReducer,
+  users: usersReducer,
   timer: timerReducer,
 });
