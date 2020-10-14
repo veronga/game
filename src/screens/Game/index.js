@@ -2,6 +2,7 @@ import React, {useState, useCallback} from 'react';
 import {View, Text} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import PropTypes from 'prop-types';
+import {useSelector} from 'react-redux';
 
 import {ScreenBackground,TextBackground,AnimatedBar,AnswerButton} from 'src/components';
 
@@ -13,6 +14,7 @@ import plusOne from 'src/assets/images/Plusone.png';
 
 export default function Game({navigation}) {
   const {textStyles, containerButton, imgStyles} = styles;
+  const {timer} = useSelector((state) => state);
 
   const [points, setPoints] = useState(null);
   const animationImg = points === 0 ? zero : plusOne;
@@ -29,7 +31,7 @@ export default function Game({navigation}) {
     <ScreenBackground>
       <Text style={textStyles}>Отвечайте</Text>
       <TextBackground title="Игрок 1, назовите три места где бы вы хотели заняться сексом " />
-      <AnimatedBar timer={16} />
+      <AnimatedBar timer={timer} />
       <View style={containerButton}>
         <AnswerButton
           title="Ответил(а)"
