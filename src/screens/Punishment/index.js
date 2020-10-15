@@ -1,25 +1,33 @@
 import React, {useCallback} from 'react';
 import {Image} from 'react-native';
 import PropTypes from 'prop-types';
+import {useSelector, useDispatch} from 'react-redux';
 
 import {ScreenBackground, TextBackground, Button} from 'src/components';
 
 import styles from './styles';
+
+import {changeIndex} from 'src/reducers/usersSlice';
 
 import imgBeer from 'src/assets/images/beer.png';
 
 export default function Punishment({navigation}) {
   const {imgStyles, customContainer, customStyles} = styles;
 
+  const {users: {players, currentPlayersIndex}} = useSelector((state) => state);
+  const {name} = players[currentPlayersIndex];
+  const dispatch = useDispatch();
+
   const navigatingThroughScreens = useCallback(() => {
     navigation.navigate('Questions');
+    dispatch(changeIndex());
   }, []);
 
   return (
     <ScreenBackground>
       <Image source={imgBeer} style={imgStyles} />
       <TextBackground
-        title="Игрок 1 вы не ответили на вопрос выпейте весь свой стакан "
+        title={`${name} ` + 'крабш'}
         customContainer={customContainer}
       />
       <Button
