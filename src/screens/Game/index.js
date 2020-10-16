@@ -2,19 +2,28 @@ import React, {useState, useCallback} from 'react';
 import {View, Text} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import PropTypes from 'prop-types';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 
-import {ScreenBackground,TextBackground,AnimatedBar,AnswerButton} from 'src/components';
+import {
+  ScreenBackground,
+  TextBackground,
+  AnimatedBar,
+  AnswerButton,
+} from 'src/components';
 
-
-import styles from './styles';
+import {changeIndex} from 'src/reducers/usersSlice';
 
 import zero from 'src/assets/images/Zero.png';
 import plusOne from 'src/assets/images/Plusone.png';
 
+import styles from './styles';
+
 export default function Game({navigation}) {
   const {textStyles, containerButton, imgStyles} = styles;
-  const {timer} = useSelector((state) => state);
+  const {timer,users: {players, currentPlayersIndex}} = useSelector((state) => state);
+  const {name} = players[currentPlayersIndex];
+
+  const dispatch = useDispatch();
 
   const [points, setPoints] = useState(null);
   const animationImg = points === 0 ? zero : plusOne;
@@ -24,13 +33,14 @@ export default function Game({navigation}) {
       navigation.navigate('Punishment');
     } else {
       navigation.navigate('Questions');
+      dispatch(changeIndex());
     }
   }, [points]);
 
   return (
     <ScreenBackground>
       <Text style={textStyles}>Отвечайте</Text>
-      <TextBackground title="Игрок 1, назовите три места где бы вы хотели заняться сексом " />
+      <TextBackground title={`${name} ` + 'крабш'} />
       <AnimatedBar timer={timer} />
       <View style={containerButton}>
         <AnswerButton
