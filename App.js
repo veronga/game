@@ -6,8 +6,11 @@ import {configureStore} from '@reduxjs/toolkit';
 import Router from './src/navigation';
 import rootReducer from './src/reducers';
 
+import Reactotron from './src/config/ReactotronConfig';
+
 const store = configureStore({
   reducer: rootReducer,
+  reactotron: Reactotron.createEnhancer(),
 });
 
 export default function App() {
