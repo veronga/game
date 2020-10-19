@@ -10,7 +10,7 @@ import Reactotron from './src/config/ReactotronConfig';
 
 const store = configureStore({
   reducer: rootReducer,
-  reactotron: Reactotron.createEnhancer(),
+  enhancers: [Reactotron.createEnhancer()],
 });
 
 export default function App() {

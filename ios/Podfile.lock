@@ -300,8 +300,6 @@ PODS:
     - React-RCTText
   - RNCMaskedView (0.1.10):
     - React
-  - RNCPicker (1.6.5):
-    - React
   - RNGestureHandler (1.8.0):
     - React
   - RNReanimated (1.13.1):
@@ -364,7 +362,6 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeNavigation (from `../node_modules/react-native-navigation`)
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
-  - "RNCPicker (from `../node_modules/@react-native-community/picker`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -441,8 +438,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-navigation"
   RNCMaskedView:
     :path: "../node_modules/@react-native-community/masked-view"
-  RNCPicker:
-    :path: "../node_modules/@react-native-community/picker"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNReanimated:
@@ -493,7 +488,6 @@ SPEC CHECKSUMS:
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
   ReactNativeNavigation: 2d10f0059506c69795683f525369baa7d0e9536c
   RNCMaskedView: f5c7d14d6847b7b44853f7acb6284c1da30a3459
-  RNCPicker: 55b9b4240d0a9eba8733d02616775d4040de2e7d
   RNGestureHandler: 7a5833d0f788dbd107fbb913e09aa0c1ff333c39
   RNReanimated: dd8c286ab5dd4ba36d3a7fef8bff7e08711b5476
   RNScreens: 0e91da98ab26d5d04c7b59a9b6bd694124caf88c
@@ -503,4 +497,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: c97c7ef4d05fc205dd22fdef87854a031dc7549c
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.9.1

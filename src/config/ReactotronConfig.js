@@ -1,17 +1,19 @@
-import Reactotron from 'reactotron-react-native';
-import {AsyncStorage} from 'react-native';
+import Reactotron, {openInEditor} from 'reactotron-react-native';
 import {reactotronRedux} from 'reactotron-redux';
 
-const reactotron = Reactotron.setAsyncStorageHandler(AsyncStorage)
-  .configure({
+let reactotron;
+
+if (__DEV__) {
+  reactotron = Reactotron.configure({
     name: 'Game',
+    port: 9090,
   })
-  .use(reactotronRedux())
-  .useReactNative({
-    asyncStorage: true,
-    editor: false,
-    overlay: true,
-  })
-  .connect();
+    .useReactNative({
+    })
+    .use(reactotronRedux())
+    .use(openInEditor())
+    .connect();
+  console.tron = Reactotron.log;
+}
 
 export default reactotron;
