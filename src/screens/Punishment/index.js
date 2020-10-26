@@ -19,15 +19,20 @@ export default function Punishment({navigation}) {
   const dispatch = useDispatch();
 
   const navigatingThroughScreens = useCallback(() => {
-    navigation.navigate('Questions');
-    dispatch(changeIndex());
+    if (players.length === currentPlayersIndex + 1) {
+      navigation.navigate('ResultTable');
+      dispatch(changeIndex());
+    } else {
+      navigation.navigate('Questions');
+      dispatch(changeIndex());
+    }
   }, []);
 
   return (
     <ScreenBackground>
       <Image source={imgBeer} style={imgStyles} />
       <TextBackground
-        title={`${name} ` + 'крабш'}
+        title={`${name}, ` + 'крабш'}
         customContainer={customContainer}
       />
       <Button
