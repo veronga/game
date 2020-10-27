@@ -20,7 +20,7 @@ import styles from './styles';
 
 export default function Game({navigation}) {
   const {textStyles, containerButton, imgStyles} = styles;
-  const {timer,users: {players, currentPlayersIndex}} = useSelector((state) => state);
+  const {timer, users: {players, currentPlayersIndex}} = useSelector((state) => state);
   const {name} = players[currentPlayersIndex];
 
   const dispatch = useDispatch();
@@ -29,8 +29,12 @@ export default function Game({navigation}) {
   const animationImg = points === 0 ? zero : plusOne;
 
   const navigatingThroughScreens = useCallback(() => {
+    const isUserLast = players.length === currentPlayersIndex + 1;
     if (points === 0) {
       navigation.navigate('Punishment');
+    } else if (isUserLast) {
+      navigation.navigate('ResultTable');
+      dispatch(changeIndex());
     } else {
       navigation.navigate('Questions');
       dispatch(changeIndex());
@@ -40,7 +44,7 @@ export default function Game({navigation}) {
   return (
     <ScreenBackground>
       <Text style={textStyles}>Отвечайте</Text>
-      <TextBackground title={`${name} ` + 'крабш'} />
+      <TextBackground title={`${name}, ` + 'крабш'} />
       <AnimatedBar timer={timer} />
       <View style={containerButton}>
         <AnswerButton
