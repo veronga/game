@@ -19,7 +19,8 @@ export default function Punishment({navigation}) {
   const dispatch = useDispatch();
 
   const navigatingThroughScreens = useCallback(() => {
-    if (players.length === currentPlayersIndex + 1) {
+    const isUserLast = players.length === currentPlayersIndex + 1
+    if (isUserLast) {
       navigation.navigate('ResultTable');
       dispatch(changeIndex());
     } else {

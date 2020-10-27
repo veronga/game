@@ -29,9 +29,10 @@ export default function Game({navigation}) {
   const animationImg = points === 0 ? zero : plusOne;
 
   const navigatingThroughScreens = useCallback(() => {
+    const isUserLast = players.length === currentPlayersIndex + 1;
     if (points === 0) {
       navigation.navigate('Punishment');
-    } else if (players.length === currentPlayersIndex + 1) {
+    } else if (isUserLast) {
       navigation.navigate('ResultTable');
       dispatch(changeIndex());
     } else {
