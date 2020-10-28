@@ -11,12 +11,11 @@ const userSlice = createSlice({
       if (state.players.length === state.currentPlayersIndex + 1) {
         state.currentPlayersIndex = 0;
       } else {
-        state.currentPlayersIndex = state.currentPlayersIndex + 1;
+        state.currentPlayersIndex += 1;
       }
     },
     addScore(state) {
-      state.players[state.currentPlayersIndex].score =
-        state.players[state.currentPlayersIndex].score + 1;
+      state.players[state.currentPlayersIndex].score += 1;
     },
   },
 });
