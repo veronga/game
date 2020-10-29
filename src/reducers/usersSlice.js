@@ -11,12 +11,15 @@ const userSlice = createSlice({
       if (state.players.length === state.currentPlayersIndex + 1) {
         state.currentPlayersIndex = 0;
       } else {
-        state.currentPlayersIndex = state.currentPlayersIndex + 1;
+        state.currentPlayersIndex += 1;
       }
+    },
+    addScore(state) {
+      state.players[state.currentPlayersIndex].score += 1;
     },
   },
 });
 
-export const {addUsers, changeIndex} = userSlice.actions;
+export const {addUsers, changeIndex, addScore} = userSlice.actions;
 
 export default userSlice.reducer;
