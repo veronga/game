@@ -10,7 +10,7 @@ export default StyleSheet.create({
   },
   customStyles: {
     width: '80%',
-    marginVertical:50
+    marginVertical: 100,
   },
   customTitleStyles: {
     fontSize: 36,
@@ -18,6 +18,6 @@ export default StyleSheet.create({
   customStylesСategories: {
     width: '80%',
     backgroundColor: '#E569C0',
-    marginVertical:100
+    marginVertical: 0,
   },
 });

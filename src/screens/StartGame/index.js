@@ -1,6 +1,9 @@
 import React, {useState, useCallback} from 'react';
 import {Text} from 'react-native';
 import PropTypes from 'prop-types';
+import {useSelector, useDispatch} from 'react-redux';
+
+import {changeCategory} from 'src/reducers/categorySlice';
 
 import {
   ScreenBackground,
@@ -19,13 +22,20 @@ export default function StartGame({navigation}) {
     customTitleStyles,
     customStylesСategories,
   } = styles;
+
+  const {category} = useSelector((state) => state);
+  const dispatch = useDispatch();
+
   const [isShowModal, setShowModal] = useState(false);
-  const [changeTitle, setChangeTitle] = useState('Выберите категорию');
+  const [changeTitle, setChangeTitle] = useState(category);
 
   const toggleModal = useCallback(
     (category) => {
       setShowModal(!isShowModal);
-      if (typeof category === 'string') setChangeTitle(category);
+      if (typeof category === 'string') {
+        setChangeTitle(category);
+        dispatch(changeCategory(category));
+      }
     },
     [isShowModal, changeTitle],
   );
@@ -41,7 +51,7 @@ export default function StartGame({navigation}) {
       </ModalList>
       <Text style={textStyles}>Таймер</Text>
       <Timer />
-
+      <Text style={textStyles}>Kатегория</Text>
       <Button
         title={changeTitle}
         customStyles={customStylesСategories}
