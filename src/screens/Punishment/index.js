@@ -17,15 +17,15 @@ export default function Punishment({navigation}) {
   const {users: {players, currentPlayersIndex}} = useSelector((state) => state);
   const {name} = players[currentPlayersIndex];
   const dispatch = useDispatch();
+  
 
   const navigatingThroughScreens = useCallback(() => {
     const isUserLast = players.length === currentPlayersIndex + 1
+    dispatch(changeIndex());
     if (isUserLast) {
       navigation.navigate('ResultTable');
-      dispatch(changeIndex());
     } else {
       navigation.navigate('Questions');
-      dispatch(changeIndex());
     }
   }, []);
 

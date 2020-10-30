@@ -11,7 +11,7 @@ import {
   AnswerButton,
 } from 'src/components';
 
-import {changeIndex} from 'src/reducers/usersSlice';
+import {changeIndex, addScore} from 'src/reducers/usersSlice';
 
 import zero from 'src/assets/images/Zero.png';
 import plusOne from 'src/assets/images/Plusone.png';
@@ -20,9 +20,11 @@ import styles from './styles';
 
 export default function Game({navigation,route}) {
   const {textStyles, containerButton, imgStyles} = styles;
+
   const { question } = route.params;
 
   const {timer, users: {players, currentPlayersIndex}} = useSelector((state) => state);
+
   const {name} = players[currentPlayersIndex];
   const dispatch = useDispatch();
 
@@ -35,13 +37,16 @@ export default function Game({navigation,route}) {
     if (points === 0) {
       navigation.navigate('Punishment');
     } else if (isUserLast) {
+      dispatch(addScore());
+      dispatch(changeIndex());
       navigation.navigate('ResultTable');
-      dispatch(changeIndex());
     } else {
-      navigation.navigate('Questions');
+      dispatch(addScore());
       dispatch(changeIndex());
+      navigation.navigate('Questions');
     }
   }, [points]);
+  
 
   return (
     <ScreenBackground>
