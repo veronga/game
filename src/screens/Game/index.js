@@ -11,21 +11,25 @@ import {
   AnswerButton,
 } from 'src/components';
 
-import {changeIndex} from 'src/reducers/usersSlice';
+import {changeIndex, addScore} from 'src/reducers/usersSlice';
 
 import zero from 'src/assets/images/Zero.png';
 import plusOne from 'src/assets/images/Plusone.png';
 
 import styles from './styles';
 
-export default function Game({navigation}) {
+export default function Game({navigation,route}) {
   const {textStyles, containerButton, imgStyles} = styles;
-  const {timer, users: {players, currentPlayersIndex}} = useSelector((state) => state);
-  const {name} = players[currentPlayersIndex];
 
+  const { question } = route.params;
+
+  const {timer, users: {players, currentPlayersIndex}} = useSelector((state) => state);
+
+  const {name} = players[currentPlayersIndex];
   const dispatch = useDispatch();
 
   const [points, setPoints] = useState(null);
+
   const animationImg = points === 0 ? zero : plusOne;
 
   const navigatingThroughScreens = useCallback(() => {
@@ -33,18 +37,21 @@ export default function Game({navigation}) {
     if (points === 0) {
       navigation.navigate('Punishment');
     } else if (isUserLast) {
+      dispatch(addScore());
+      dispatch(changeIndex());
       navigation.navigate('ResultTable');
-      dispatch(changeIndex());
     } else {
-      navigation.navigate('Questions');
+      dispatch(addScore());
       dispatch(changeIndex());
+      navigation.navigate('Questions');
     }
   }, [points]);
+  
 
   return (
     <ScreenBackground>
       <Text style={textStyles}>Отвечайте</Text>
-      <TextBackground title={`${name}, ` + 'крабш'} />
+      <TextBackground title={`${name}, ` + `${question}`} />
       <AnimatedBar timer={timer} />
       <View style={containerButton}>
         <AnswerButton
@@ -74,4 +81,5 @@ export default function Game({navigation}) {
 
 Game.propTypes = {
   navigation: PropTypes.object.isRequired,
+  route: PropTypes.object.isRequired,
 };
