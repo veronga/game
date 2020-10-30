@@ -18,17 +18,18 @@ import plusOne from 'src/assets/images/Plusone.png';
 
 import styles from './styles';
 
-export default function Game({navigation}) {
+export default function Game({navigation,route}) {
   const {textStyles, containerButton, imgStyles} = styles;
-  const {
-    timer,
-    users: {players, currentPlayersIndex},
-  } = useSelector((state) => state);
-  const {name} = players[currentPlayersIndex];
 
+  const { question } = route.params;
+
+  const {timer, users: {players, currentPlayersIndex}} = useSelector((state) => state);
+
+  const {name} = players[currentPlayersIndex];
   const dispatch = useDispatch();
 
   const [points, setPoints] = useState(null);
+
   const animationImg = points === 0 ? zero : plusOne;
 
   const navigatingThroughScreens = useCallback(() => {
@@ -50,7 +51,7 @@ export default function Game({navigation}) {
   return (
     <ScreenBackground>
       <Text style={textStyles}>Отвечайте</Text>
-      <TextBackground title={`${name}, ` + 'крабш'} />
+      <TextBackground title={`${name}, ` + `${question}`} />
       <AnimatedBar timer={timer} />
       <View style={containerButton}>
         <AnswerButton
@@ -80,4 +81,5 @@ export default function Game({navigation}) {
 
 Game.propTypes = {
   navigation: PropTypes.object.isRequired,
+  route: PropTypes.object.isRequired,
 };
