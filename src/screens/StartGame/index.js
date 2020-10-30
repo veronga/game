@@ -23,21 +23,19 @@ export default function StartGame({navigation}) {
     customStylesСategories,
   } = styles;
 
+  const [isShowModal, setShowModal] = useState(false);
+
   const {category} = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  const [isShowModal, setShowModal] = useState(false);
-  const [changeTitle, setChangeTitle] = useState(category);
-
   const toggleModal = useCallback(
-    (category) => {
+    (newCategory) => {
       setShowModal(!isShowModal);
-      if (typeof category === 'string') {
-        setChangeTitle(category);
-        dispatch(changeCategory(category));
+      if (typeof newCategory === 'string') {
+        dispatch(changeCategory(newCategory));
       }
     },
-    [isShowModal, changeTitle],
+    [isShowModal],
   );
 
   const navigatingThroughScreens = useCallback(() => {
@@ -53,7 +51,7 @@ export default function StartGame({navigation}) {
       <Timer />
       <Text style={textStyles}>Kатегория</Text>
       <Button
-        title={changeTitle}
+        title={category}
         customStyles={customStylesСategories}
         onPress={toggleModal}
       />

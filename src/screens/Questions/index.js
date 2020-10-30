@@ -8,6 +8,8 @@ import {ScreenBackground, TextBackground, Button} from 'src/components';
 
 import questions from 'src/questions.json';
 
+import getRandomInt from 'src/helps';
+
 import styles from './styles';
 
 export default function Questions({navigation}) {
@@ -17,14 +19,12 @@ export default function Questions({navigation}) {
   const {category} = useSelector((state) => state);
   const {name} = players[currentPlayersIndex];
 
-  function getRandomInt() {
-    return Math.floor(Math.random() * Math.floor(questions[category].length));
-  }
-  const index = getRandomInt();
+  const manyQuestions = questions[category].length;
+  const index = getRandomInt(manyQuestions)
   const question = questions[category][index];
 
   const navigatingThroughScreens = useCallback(() => {
-    navigation.navigate('Game', {question: question});
+    navigation.navigate('Game', {question});
   }, [question]);
 
   return (
