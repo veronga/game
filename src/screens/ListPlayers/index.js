@@ -1,8 +1,11 @@
-import React, {useState, useCallback} from 'react';
-import {Text} from 'react-native';
+import React, {useState, useCallback, useEffect} from 'react';
 import PropTypes from 'prop-types';
+import {Text} from 'react-native';
 import {useDispatch} from 'react-redux';
+import SplashScreen from 'react-native-splash-screen';
+
 import {ScreenBackground, Input, AddButton, Button} from 'src/components';
+
 import {addUsers} from 'src/reducers/usersSlice';
 
 import styles from './styles';
@@ -16,6 +19,10 @@ export default function ListPlayers({navigation}) {
   const [error, setError] = useState('');
   const isDecreaseDisabled = userInputs.length === 2;
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    SplashScreen.hide();
+  });
 
   const addMember = useCallback(() => {
     const newList = [...userInputs, {inputValue: ''}];
