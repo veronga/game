@@ -7,7 +7,7 @@ import {addUsers} from 'src/reducers/usersSlice';
 
 import styles from './styles';
 
-export default function ListPlayers({navigation}) {
+export default function ListPlayers({navigation, testID}) {
   const {textStyles, customStyles, borderTop, textError} = styles;
   const [userInputs, setUserInputs] = useState([
     {inputValue: ''},
@@ -32,7 +32,10 @@ export default function ListPlayers({navigation}) {
   const navigatingThroughScreens = useCallback(() => {
     if (checkInputsFilling >= 2) {
       navigation.navigate('StartGame');
-      const users = userInputs.map((item)=> ({name: item.inputValue, score: 0}))
+      const users = userInputs.map((item) => ({
+        name: item.inputValue,
+        score: 0,
+      }));
       dispatch(addUsers(users));
     } else {
       setError('Пожалуйста введите как минимум имена двоих участноков');
@@ -63,6 +66,7 @@ export default function ListPlayers({navigation}) {
             onRemoveButtonPress={onRemoveButtonPress}
             customStyles={borderInput}
             isDecreaseDisabled={isDecreaseDisabled}
+            testID={`${testID}-input `}
           />
         );
       })}
@@ -79,4 +83,5 @@ export default function ListPlayers({navigation}) {
 
 ListPlayers.propTypes = {
   navigation: PropTypes.object.isRequired,
+  testID: PropTypes,
 };
