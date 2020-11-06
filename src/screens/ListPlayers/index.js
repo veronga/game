@@ -7,7 +7,7 @@ import {addUsers} from 'src/reducers/usersSlice';
 
 import styles from './styles';
 
-export default function ListPlayers({navigation, testID}) {
+export default function ListPlayers({navigation}) {
   const {textStyles, customStyles, borderTop, textError} = styles;
   const [userInputs, setUserInputs] = useState([
     {inputValue: ''},
@@ -66,12 +66,14 @@ export default function ListPlayers({navigation, testID}) {
             onRemoveButtonPress={onRemoveButtonPress}
             customStyles={borderInput}
             isDecreaseDisabled={isDecreaseDisabled}
-            testID={`${testID}-input `}
+            testID={`input-${index}`}
           />
         );
       })}
       <AddButton onPress={addMember} />
-      <Text style={textError}>{error}</Text>
+      <Text testID={`error`} style={textError}>
+        {error}
+      </Text>
       <Button
         title="Дальше"
         customStyles={customStyles}
@@ -83,5 +85,4 @@ export default function ListPlayers({navigation, testID}) {
 
 ListPlayers.propTypes = {
   navigation: PropTypes.object.isRequired,
-  testID: PropTypes,
 };
