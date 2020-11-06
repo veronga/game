@@ -26,11 +26,12 @@ describe('Test screeen ListPlayers', () => {
     const secondInput = getByTestId('input-1');
     const buttonText = getByText('Дальше');
 
-    const usersState = store.getState().users.players;
-
+    
     fireEvent.changeText(firstInput, 'test');
     fireEvent.changeText(secondInput, 'value');
     fireEvent.press(buttonText);
+
+    const usersState = store.getState().users.players;
     expect(usersState).toEqual([
       {name: 'test', score: 0},
       {name: 'value', score: 0},

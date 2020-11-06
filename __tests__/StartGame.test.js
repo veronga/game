@@ -23,15 +23,34 @@ describe('Test screeen StartGame', () => {
 
     const {getByTestId} = render(component);
     const addSeconds = getByTestId('button-add-seconds');
-    const second = getByTestId('timer-text');
+
+    fireEvent.press(addSeconds);
 
     const timerState = store.getState().timer;
+    expect(timerState).toBe(8);
+  });
 
-    fireEvent.press(addSeconds);
-    fireEvent.press(addSeconds);
+  test('Check save new category', () => {
+    const navigation = {navigate: jest.fn()};
+    const store = configureStore({
+      reducer: rootReducer,
+    });
 
-    
+    const component = (
+      <Provider store={store}>
+        <StartGame navigation={navigation} />
+      </Provider>
+    );
 
-    expect(timerState).toBe('8');
+    const {getByTestId} = render(component);
+
+    const chengeCategory = getByTestId('category-1');
+    const button = getByTestId('button-category');
+
+    fireEvent.press(button);
+    fireEvent.press(chengeCategory);
+
+    const categoryState = store.getState().category;
+    expect(categoryState).toBe('18+');
   });
 });

@@ -14,6 +14,7 @@ export default function Button({
   customTitleStyles,
   isShowButtonIcon,
   isDisabled,
+  testID
 }) {
   
   const {container, titleStyle, imageStyle} = styles;
@@ -23,7 +24,8 @@ export default function Button({
       style={[container, customStyles]}
       onPress={onPress}
       disabled={isDisabled}
-      activeOpacity={0.5}>
+      activeOpacity={0.5}
+      testID={testID}>
       <Text style={[titleStyle, customTitleStyles]}>{title}</Text>
       {isShowButtonIcon && (
         <Animatable.Image
@@ -44,6 +46,7 @@ Button.propTypes = {
   customTitleStyles: PropTypes.object,
   isShowButtonIcon: PropTypes.bool,
   isDisabled: PropTypes.bool,
+  testID: PropTypes.string
 };
 
 Button.defaultProps = {
