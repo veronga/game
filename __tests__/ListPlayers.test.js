@@ -10,6 +10,7 @@ import rootReducer from 'src/reducers';
 
 describe('Test screeen ListPlayers', () => {
   test('Check save value', () => {
+    
     const navigation = {navigate: jest.fn()};
     const store = configureStore({
       reducer: rootReducer,
