@@ -68,5 +68,5 @@ export default function StartGame({navigation}) {
 }
 
 StartGame.propTypes = {
-  navigation: PropTypes.object.isRequired,
+  navigation: PropTypes.object,
 };

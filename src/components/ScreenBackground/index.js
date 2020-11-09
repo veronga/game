@@ -10,5 +10,5 @@ export default function ScreenBackground({children}) {
 }
 
 ScreenBackground.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.array.isRequired,
 };

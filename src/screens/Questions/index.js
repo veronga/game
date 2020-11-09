@@ -15,12 +15,14 @@ import styles from './styles';
 export default function Questions({navigation}) {
   const {customStylesButton, textStyles} = styles;
 
-  const { users: {players, currentPlayersIndex}} = useSelector((state) => state);
+  const {
+    users: {players, currentPlayersIndex},
+  } = useSelector((state) => state);
   const {category} = useSelector((state) => state);
   const {name} = players[currentPlayersIndex];
 
   const manyQuestions = questions[category].length;
-  const index = getRandomInt(manyQuestions)
+  const index = getRandomInt(manyQuestions);
   const question = questions[category][index];
 
   const navigatingThroughScreens = useCallback(() => {
@@ -30,7 +32,7 @@ export default function Questions({navigation}) {
   return (
     <ScreenBackground>
       <Text style={textStyles}>{'Прочитайте задание и начинайте играть'}</Text>
-    <TextBackground title={`${name}, ` + `${question}`} />
+      <TextBackground title={`${name}, ` + `${question}`} />
       <Button
         title="Начинаем"
         customStyles={customStylesButton}
@@ -41,5 +43,5 @@ export default function Questions({navigation}) {
 }
 
 Questions.propTypes = {
-  navigation: PropTypes.object.isRequired,
+  navigation: PropTypes.object,
 };

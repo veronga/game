@@ -15,7 +15,7 @@ export default function Input({
   customStyles,
   onRemoveButtonPress,
   isDecreaseDisabled,
-  testID
+  testID,
 }) {
   const {container, inputStyles} = styles;
 
@@ -40,10 +40,9 @@ export default function Input({
 Input.propTypes = {
   value: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
-  onChangeText: PropTypes.string.isRequired,
+  onChangeText: PropTypes.func.isRequired,
   customStyles: PropTypes.object.isRequired,
   onRemoveButtonPress: PropTypes.func.isRequired,
   isDecreaseDisabled: PropTypes.bool.isRequired,
   testID: PropTypes.string,
-
 };

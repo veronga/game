@@ -22,9 +22,8 @@ test('Check save state', () => {
   );
   store.dispatch(addUsers([{name: 'test', score: 0}]));
 
-  const {getByTestId, debug} = render(component);
+  const {getByTestId} = render(component);
   const nameUser = getByTestId('test');
-  debug();
 
   const {currentPlayersIndex} = store.getState().users;
   const {name} = store.getState().users.players[currentPlayersIndex];

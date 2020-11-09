@@ -19,7 +19,7 @@ export default function Button({onPress, imagePath, isDecreaseDisabled}) {
 }
 
 Button.propTypes = {
-  imagePath: PropTypes.string,
+  imagePath: PropTypes.object,
   onPress: PropTypes.func.isRequired,
   isDecreaseDisabled: PropTypes.bool.isRequired,
 };

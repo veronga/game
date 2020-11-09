@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/TextBackground/styles.js</title>
+    <title>Code coverage report for screens/Game/styles.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -18,7 +18,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/TextBackground</a> styles.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">screens/Game</a> styles.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -75,7 +75,11 @@
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -97,20 +101,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {StyleSheet} from 'react-native';
 &nbsp;
 export default StyleSheet.create({
-  container: {
-    width: '80%',
-    height: '25%',
-    backgroundColor: '#F8F8F9',
-    borderRadius: 20,
-    justifyContent: 'center',
-  },
-  titleStyle: {
+  textStyles: {
     fontSize: 24,
     fontWeight: 'bold',
-    alignItems: 'center',
-    textAlign: 'center',
-    color: '#000000',
-    paddingHorizontal: 5,
+    color: '#fff',
+    alignSelf: 'center',
+    marginVertical: 50,
+  },
+  containerButton: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginTop: 40,
+  },
+  imgStyles: {
+    width: 100,
+    height: 100,
   },
 });
 &nbsp;</pre></td></tr></table></pre>
