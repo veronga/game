@@ -30,7 +30,7 @@ export default function Questions({navigation}) {
   return (
     <ScreenBackground>
       <Text style={textStyles}>{'Прочитайте задание и начинайте играть'}</Text>
-      <TextBackground title={`${name}, ` + `${question}`} />
+    <TextBackground title={`${name}, ` + `${question}`} />
       <Button
         title="Начинаем"
         customStyles={customStylesButton}

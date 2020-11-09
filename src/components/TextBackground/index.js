@@ -8,7 +8,9 @@ export default function TextBackground({title, customContainer}) {
   const {container, titleStyle} = styles;
   return (
     <View style={[container, customContainer]}>
-      <Text style={titleStyle}>{title}</Text>
+      <Text style={titleStyle} testID='test'>
+        {title}
+      </Text>
     </View>
   );
 }
