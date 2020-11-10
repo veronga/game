@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/CategoriesList/index.js</title>
+    <title>Code coverage report for screens/ResultTable/index.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -18,34 +18,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/CategoriesList</a> index.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">screens/ResultTable</a> index.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -98,65 +98,65 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
+import {Text} from 'react-native';
+&nbsp;
+import {ScreenBackground, LeaderBoard, Button} from 'src/components';
 &nbsp;
 import styles from './styles';
-import questions from 'src/questions.json';
 &nbsp;
-export default function CategoriesList({onPress}) {
-  const {container, stylesText, borderTop, borderBottom} = styles;
+export default function ResultTable({players, navigation}) {
+  const {textStyles, customStyles, customTitleStyles} = styles;
 &nbsp;
-  const categories = Object.keys(questions);
+  const navigatingThroughScreens = useCallback(() =&gt; {
+    navigation.navigate('Questions');
+  }, []);
 &nbsp;
-  return categories.map((category, index, arr) =&gt; {
-    const borberStyle =
-      index === 0 ? borderTop : index === arr.length - 1 ? borderBottom : null;
-    return (
-      &lt;TouchableOpacity
-        onPress={() =&gt; onPress(category)}
-        key={category}
-        activeOpacity={0.5}
-        testID={`category-${index}`}
-        &gt;
-        &lt;View style={[container, borberStyle]}&gt;
-          &lt;Text style={stylesText}&gt;{category}&lt;/Text&gt;
-        &lt;/View&gt;
-      &lt;/TouchableOpacity&gt;
-    );
-  });
+  return (
+    &lt;ScreenBackground&gt;
+      &lt;Text style={textStyles}&gt;Результы&lt;/Text&gt;
+      &lt;LeaderBoard players={players} /&gt;
+      &lt;Button
+        title="Играть"
+        customStyles={customStyles}
+        customTitleStyles={customTitleStyles}
+        isShowButtonIcon
+        onPress={navigatingThroughScreens}
+      /&gt;
+    &lt;/ScreenBackground&gt;
+  );
 }
 &nbsp;
-CategoriesList.propTypes = {
-  category: PropTypes.string,
-  onPress: PropTypes.func,
+ResultTable.propTypes = {
+  players: PropTypes.string,
+  navigation: PropTypes.object,
 };
 &nbsp;</pre></td></tr></table></pre>
 

@@ -62,7 +62,7 @@ describe('Test screeen Game', () => {
 
     fireEvent.press(answerButton);
     setTimeout(() => {
-      expect(navigation.navigate.mock.calls).toBe(1);
+      expect(navigation.navigate.mock.calls[0][0]).toBe('Punishment');
     }, 1000);
   });
 });
