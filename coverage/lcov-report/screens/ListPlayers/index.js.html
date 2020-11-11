@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.87% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>26/31</span>
+                <span class='fraction'>31/31</span>
             </div>
         
             
@@ -36,16 +36,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>25/30</span>
+                <span class='fraction'>30/30</span>
             </div>
         
             
@@ -154,28 +154,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -188,22 +188,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -251,9 +251,9 @@ export default function ListPlayers({navigation}) {
   const isDecreaseDisabled = userInputs.length === 2;
   const dispatch = useDispatch();
 &nbsp;
-  const addMember = useCallback(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
-    const newList = <span class="cstat-no" title="statement not covered" >[...userInputs, {inputValue: ''}];</span>
-<span class="cstat-no" title="statement not covered" >    setUserInputs(newList);</span>
+  const addMember = useCallback(() =&gt; {
+    const newList = [...userInputs, {inputValue: ''}];
+    setUserInputs(newList);
   }, [userInputs]);
 &nbsp;
   const checkInputsFilling = userInputs.reduce((acc, current) =&gt; {
@@ -285,10 +285,10 @@ export default function ListPlayers({navigation}) {
           result[index].inputValue = text;
           setUserInputs(result);
         };
-        const onRemoveButtonPress = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-          const result = <span class="cstat-no" title="statement not covered" >[...userInputs];</span>
-<span class="cstat-no" title="statement not covered" >          result.splice(index, 1);</span>
-<span class="cstat-no" title="statement not covered" >          setUserInputs(result);</span>
+        const onRemoveButtonPress = () =&gt; {
+          const result = [...userInputs];
+          result.splice(index, 1);
+          setUserInputs(result);
         };
         const borderInput = index === 0 &amp;&amp; borderTop;
         return (
@@ -300,7 +300,7 @@ export default function ListPlayers({navigation}) {
             onRemoveButtonPress={onRemoveButtonPress}
             customStyles={borderInput}
             isDecreaseDisabled={isDecreaseDisabled}
-            testID={`input-${index}`}
+            index={index}
           /&gt;
         );
       })}
@@ -327,7 +327,7 @@ ListPlayers.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Nov 10 2020 12:45:03 GMT+0300 (Moscow Standard Time)
+                at Tue Nov 10 2020 17:40:49 GMT+0300 (Moscow Standard Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

@@ -15,7 +15,7 @@ export default function Input({
   customStyles,
   onRemoveButtonPress,
   isDecreaseDisabled,
-  testID,
+  index,
 }) {
   const {container, inputStyles} = styles;
 
@@ -26,12 +26,13 @@ export default function Input({
         placeholder={placeholder}
         value={value}
         onChangeText={onChangeText}
-        testID={testID}
+        testID={`input-${index}`}
       />
       <ImageButton
         imagePath={minus}
         onPress={onRemoveButtonPress}
         isDecreaseDisabled={isDecreaseDisabled}
+        testID={`remove-button-${index}`}
       />
     </View>
   );
@@ -44,5 +45,5 @@ Input.propTypes = {
   customStyles: PropTypes.object.isRequired,
   onRemoveButtonPress: PropTypes.func.isRequired,
   isDecreaseDisabled: PropTypes.bool.isRequired,
-  testID: PropTypes.string,
+  index: PropTypes.string,
 };

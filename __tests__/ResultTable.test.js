@@ -22,6 +22,7 @@ describe('Test screeen ResultTable', () => {
         <ResultTable navigation={navigation} />
       </Provider>
     );
+
     store.dispatch(
       addUsers([
         {name: 'test', score: 3},
@@ -43,14 +44,13 @@ describe('Test screeen ResultTable', () => {
       {name: 'value', score: 5},
     ]);
   });
+
   test('Check go to the screen', () => {
     const navigation = {navigate: jest.fn()};
-
+    const route = {params: {question: null}};
     const store = configureStore({
       reducer: rootReducer,
     });
-
-    const route = {params: {question: null}};
 
     const component = (
       <Provider store={store}>
@@ -66,10 +66,9 @@ describe('Test screeen ResultTable', () => {
     );
 
     const {getByText} = render(component);
-    const answerButton = getByText('Играть');
+    const buttonText = getByText('Играть');
 
-    fireEvent.press(answerButton);
-
+    fireEvent.press(buttonText);
     expect(navigation.navigate.mock.calls[0][0]).toBe('Questions');
   });
 });

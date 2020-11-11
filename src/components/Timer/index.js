@@ -33,7 +33,8 @@ export default function Timer() {
       </Text>
       <TouchableOpacity
         onPress={() => dispatch(decrement())}
-        disabled={isDecreaseDisabled}>
+        disabled={isDecreaseDisabled}
+        testID="button-decrement-seconds">
         <Image style={imgStyles} source={minus} />
       </TouchableOpacity>
     </View>

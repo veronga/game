@@ -13,12 +13,10 @@ import {addUsers} from 'src/reducers/usersSlice';
 describe('Test screeen Game', () => {
   test('Check save add score', () => {
     const navigation = {navigate: jest.fn()};
-
+    const route = {params: {question: null}};
     const store = configureStore({
       reducer: rootReducer,
     });
-
-    const route = {params: {question: null}};
 
     const component = (
       <Provider store={store}>
@@ -26,7 +24,12 @@ describe('Test screeen Game', () => {
       </Provider>
     );
 
-    store.dispatch(addUsers([{name: 'test', score: 0}]));
+    store.dispatch(
+      addUsers([
+        {name: 'test', score: 0},
+        {name: 'test', score: 0},
+      ]),
+    );
 
     const {getByText} = render(component);
     const answerButton = getByText('Ответил(а)');
@@ -42,12 +45,10 @@ describe('Test screeen Game', () => {
 
   test('Check go to the screen', () => {
     const navigation = {navigate: jest.fn()};
-
+    const route = {params: {question: null}};
     const store = configureStore({
       reducer: rootReducer,
     });
-
-    const route = {params: {question: null}};
 
     const component = (
       <Provider store={store}>
@@ -55,7 +56,12 @@ describe('Test screeen Game', () => {
       </Provider>
     );
 
-    store.dispatch(addUsers([{name: 'test', score: 0}]));
+    store.dispatch(
+      addUsers([
+        {name: 'test', score: 0},
+        {name: 'test', score: 0},
+      ]),
+    );
 
     const {getByText} = render(component);
     const answerButton = getByText('Не ответил(а)');
@@ -63,6 +69,36 @@ describe('Test screeen Game', () => {
     fireEvent.press(answerButton);
     setTimeout(() => {
       expect(navigation.navigate.mock.calls[0][0]).toBe('Punishment');
+    }, 1000);
+  });
+
+  test('Check save add score', () => {
+    const navigation = {navigate: jest.fn()};
+    const route = {params: {question: null}};
+    const store = configureStore({
+      reducer: rootReducer,
+    });
+
+    const component = (
+      <Provider store={store}>
+        <Game route={route} navigation={navigation} />
+      </Provider>
+    );
+
+    store.dispatch(
+      addUsers([
+        {name: 'test', score: 0},
+        {name: 'test', score: 0},
+      ]),
+    );
+
+    const {getByText} = render(component);
+    const answerButton = getByText('Ответил(а)');
+
+    fireEvent.press(answerButton);
+
+    setTimeout(() => {
+      expect(navigation.navigate.mock.calls[0][0]).toBe('Questions');
     }, 1000);
   });
 });

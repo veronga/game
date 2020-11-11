@@ -66,7 +66,7 @@ export default function ListPlayers({navigation}) {
             onRemoveButtonPress={onRemoveButtonPress}
             customStyles={borderInput}
             isDecreaseDisabled={isDecreaseDisabled}
-            testID={`input-${index}`}
+            index={index}
           />
         );
       })}
