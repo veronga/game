@@ -14,7 +14,7 @@ export default function ModalList({children, isShowModal}) {
 }
 
 ModalList.propTypes = {
-  isShowModal: PropTypes.func,
+  isShowModal: PropTypes.bool,
   toggleModal: PropTypes.func,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.object,
 };

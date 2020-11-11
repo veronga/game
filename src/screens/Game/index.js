@@ -18,12 +18,15 @@ import plusOne from 'src/assets/images/Plusone.png';
 
 import styles from './styles';
 
-export default function Game({navigation,route}) {
+export default function Game({navigation, route}) {
   const {textStyles, containerButton, imgStyles} = styles;
 
-  const { question } = route.params;
+  const {question} = route.params;
 
-  const {timer, users: {players, currentPlayersIndex}} = useSelector((state) => state);
+  const {
+    timer,
+    users: {players, currentPlayersIndex},
+  } = useSelector((state) => state);
 
   const {name} = players[currentPlayersIndex];
   const dispatch = useDispatch();
@@ -46,7 +49,6 @@ export default function Game({navigation,route}) {
       navigation.navigate('Questions');
     }
   }, [points]);
-  
 
   return (
     <ScreenBackground>

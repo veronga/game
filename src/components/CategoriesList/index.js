@@ -17,7 +17,9 @@ export default function CategoriesList({onPress}) {
       <TouchableOpacity
         onPress={() => onPress(category)}
         key={category}
-        activeOpacity={0.5}>
+        activeOpacity={0.5}
+        testID={`category-${index}`}
+        >
         <View style={[container, borberStyle]}>
           <Text style={stylesText}>{category}</Text>
         </View>

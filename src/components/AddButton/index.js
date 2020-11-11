@@ -10,7 +10,7 @@ export default function AddButton({onPress}) {
   const {container, titleStyle, imageStyle} = styles;
 
   return (
-    <TouchableOpacity style={container} onPress={onPress} activeOpacity={0.5}>
+    <TouchableOpacity style={container} onPress={onPress} activeOpacity={0.5} testID='add-input'>
       <Text style={titleStyle}>Добавить игрока</Text>
       <Image source={plus} style={imageStyle} />
     </TouchableOpacity>
