@@ -29,6 +29,6 @@ export default function ResultTable({players, navigation}) {
 }
 
 ResultTable.propTypes = {
-  players: PropTypes.string.isRequired,
-  navigation: PropTypes.object.isRequired,
+  players: PropTypes.string,
+  navigation: PropTypes.object,
 };

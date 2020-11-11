@@ -21,9 +21,9 @@ export default function LeaderBoard() {
       index === 0 ? borderTop : index === arr.length - 1 ? borderBottom : null;
     return (
       <View key={item} style={[container, borberStyle]}>
-        <Text style={stylesText}>{item.name}</Text>
+        <Text testID='usersName' style={stylesText}>{item.name}</Text>
         <View style={containerPoint}>
-          <Text style={stylesPoint}>{item.score}</Text>
+          <Text testID='usersScore' style={stylesPoint}>{item.score}</Text>
         </View>
       </View>
     );
@@ -31,5 +31,5 @@ export default function LeaderBoard() {
 }
 
 LeaderBoard.propTypes = {
-  players: PropTypes.string.isRequired,
+  players: PropTypes.string,
 };

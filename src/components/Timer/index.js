@@ -18,17 +18,23 @@ export default function Timer() {
   const isIncreaseDisabled = timer === 35;
   const isDecreaseDisabled = timer <= 5;
 
+  const onPress = () => dispatch(increment());
+
   return (
     <View style={container}>
       <TouchableOpacity
-        onPress={() => dispatch(increment())}
-        disabled={isIncreaseDisabled}>
+        onPress={onPress}
+        disabled={isIncreaseDisabled}
+        testID="button-add-seconds">
         <Image style={imgStyles} source={plus} />
       </TouchableOpacity>
-      <Text style={textStyles}>{timer}</Text>
+      <Text style={textStyles} testID="timer-text">
+        {timer}
+      </Text>
       <TouchableOpacity
         onPress={() => dispatch(decrement())}
-        disabled={isDecreaseDisabled}>
+        disabled={isDecreaseDisabled}
+        testID="button-decrement-seconds">
         <Image style={imgStyles} source={minus} />
       </TouchableOpacity>
     </View>

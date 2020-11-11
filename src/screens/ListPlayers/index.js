@@ -39,7 +39,10 @@ export default function ListPlayers({navigation}) {
   const navigatingThroughScreens = useCallback(() => {
     if (checkInputsFilling >= 2) {
       navigation.navigate('StartGame');
-      const users = userInputs.map((item)=> ({name: item.inputValue, score: 0}))
+      const users = userInputs.map((item) => ({
+        name: item.inputValue,
+        score: 0,
+      }));
       dispatch(addUsers(users));
     } else {
       setError('Пожалуйста введите как минимум имена двоих участноков');
@@ -70,11 +73,14 @@ export default function ListPlayers({navigation}) {
             onRemoveButtonPress={onRemoveButtonPress}
             customStyles={borderInput}
             isDecreaseDisabled={isDecreaseDisabled}
+            index={index}
           />
         );
       })}
       <AddButton onPress={addMember} />
-      <Text style={textError}>{error}</Text>
+      <Text testID={`error`} style={textError}>
+        {error}
+      </Text>
       <Button
         title="Дальше"
         customStyles={customStyles}
@@ -85,5 +91,5 @@ export default function ListPlayers({navigation}) {
 }
 
 ListPlayers.propTypes = {
-  navigation: PropTypes.object.isRequired,
+  navigation: PropTypes.object,
 };

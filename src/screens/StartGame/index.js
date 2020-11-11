@@ -54,6 +54,7 @@ export default function StartGame({navigation}) {
         title={category}
         customStyles={customStylesСategories}
         onPress={toggleModal}
+        testID={'button-category'}
       />
       <Button
         title="Играть"
@@ -67,5 +68,5 @@ export default function StartGame({navigation}) {
 }
 
 StartGame.propTypes = {
-  navigation: PropTypes.object.isRequired,
+  navigation: PropTypes.object,
 };

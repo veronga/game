@@ -5,11 +5,15 @@ import {useSelector, useDispatch} from 'react-redux';
 
 import {ScreenBackground, TextBackground, Button} from 'src/components';
 
-import styles from './styles';
-
 import {changeIndex} from 'src/reducers/usersSlice';
 
 import imgBeer from 'src/assets/images/beer.png';
+
+import getRandomInt from 'src/helps';
+
+import punishments from 'src/punishments.json';
+
+import styles from './styles';
 
 export default function Punishment({navigation}) {
   const {imgStyles, customContainer, customStyles} = styles;
@@ -17,7 +21,10 @@ export default function Punishment({navigation}) {
   const {users: {players, currentPlayersIndex}} = useSelector((state) => state);
   const {name} = players[currentPlayersIndex];
   const dispatch = useDispatch();
-  
+
+  const punishmentsLength = punishments.length;
+  const index = getRandomInt(punishmentsLength)
+  const punishment = punishments[index];
 
   const navigatingThroughScreens = useCallback(() => {
     const isUserLast = players.length === currentPlayersIndex + 1
@@ -33,7 +40,7 @@ export default function Punishment({navigation}) {
     <ScreenBackground>
       <Image source={imgBeer} style={imgStyles} />
       <TextBackground
-        title={`${name}, ` + 'крабш'}
+        title={`${name}, ` + `${punishment}`}
         customContainer={customContainer}
       />
       <Button
@@ -46,5 +53,5 @@ export default function Punishment({navigation}) {
 }
 
 Punishment.propTypes = {
-  navigation: PropTypes.object.isRequired,
+  navigation: PropTypes.object,
 };
