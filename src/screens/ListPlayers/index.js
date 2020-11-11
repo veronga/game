@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Text} from 'react-native';
 import {useDispatch} from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
+import {Platform} from 'react-native';
 
 import {ScreenBackground, Input, AddButton, Button} from 'src/components';
 
@@ -21,7 +22,9 @@ export default function ListPlayers({navigation}) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    SplashScreen.hide();
+    if (Platform.OS === 'android') {
+      SplashScreen.hide();
+    }
   });
 
   const addMember = useCallback(() => {
