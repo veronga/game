@@ -20,9 +20,7 @@ import styles from './styles';
 
 export default function Game({navigation, route}) {
   const {textStyles, containerButton, imgStyles} = styles;
-
   const {question} = route.params;
-
   const {
     timer,
     users: {players, currentPlayersIndex},
@@ -32,6 +30,7 @@ export default function Game({navigation, route}) {
   const dispatch = useDispatch();
 
   const [points, setPoints] = useState(null);
+  const [isButtonDisabled, setButtonDisabled] = useState(false);
 
   const animationImg = points === 0 ? zero : plusOne;
 
@@ -50,6 +49,10 @@ export default function Game({navigation, route}) {
     }
   }, [points]);
 
+  const onPressDisabled = () => {
+    setButtonDisabled(true);
+  };
+
   return (
     <ScreenBackground>
       <Text style={textStyles}>Отвечайте</Text>
@@ -60,11 +63,13 @@ export default function Game({navigation, route}) {
           title="Ответил(а)"
           custombackgroundColor={{backgroundColor: '#32A574'}}
           onPress={() => setPoints(1)}
+          isDisabled={isButtonDisabled}
         />
         <AnswerButton
           title="Не ответил(а)"
           custombackgroundColor={{backgroundColor: '#E45B70'}}
           onPress={() => setPoints(0)}
+          isDisabled={isButtonDisabled}
         />
       </View>
       {points !== null && (
@@ -75,6 +80,7 @@ export default function Game({navigation, route}) {
           style={imgStyles}
           source={animationImg}
           onAnimationEnd={navigatingThroughScreens}
+          onAnimationBegin={onPressDisabled}
         />
       )}
     </ScreenBackground>
