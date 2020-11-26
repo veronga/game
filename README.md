@@ -1,7 +1,7 @@
 # МЕЖДУСОБОЙЧИК
 
 <p aligen="center">
-  <img width="250" height="250" src="androin/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png">
+  <img width="250" height="250" src="./androin/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png">
 </p>
 
 ## Table of Contents 🌐
