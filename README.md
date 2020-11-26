@@ -1,6 +1,6 @@
 # МЕЖДУСОБОЙЧИК
 
-<p aligen="center">
+<p align="center">
   <img width="250" height="250" src="https://github.com/veronga/game/blob/master/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png">
 </p>
 
