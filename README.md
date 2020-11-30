@@ -6,15 +6,15 @@
 
 ## Table of Contents 🌐
 
-- [About the Project](#about-the-project)
-- [Use library](#use-library)
-- [Getting Started](#getting-started)
-- [Available Command](#available-command)
-- [Contact](#contact)
++ [About the project](#about-the-project)
++ [Use library](#use-library)
++ [Getting started](#getting-started)
++ [Available command](#available-command)
++ [Contact](#contact)
 
 ---
 
-## About The Project 📝
+## About the project 📝
 
 An app for getting to know the other side of your friends.Simple and clear cross platform party apps written in the React Native framework.
 
@@ -29,7 +29,7 @@ An app for getting to know the other side of your friends.Simple and clear cross
 [![](https://img.shields.io/badge/React%20Native%20Navigation-v^6.8.0-orange)](https://github.com/wix/react-native-navigation)
 [![](https://img.shields.io/badge/React%20Native%20Animatable-v^1.3.3-critical)](https://github.com/oblador/react-native-animatable)
 
-## Getting Started 🛠
+## Getting started 🛠
 
 - Copy app
 
@@ -69,7 +69,7 @@ $  cd ..
 $  react-native run-[ios|android]
 ```
 
-## Available Command 💻
+## Available command 💻
 
 #### Launch on Android
 
