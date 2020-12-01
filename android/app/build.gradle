@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.game"
+        applicationId "com.smallparty"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
