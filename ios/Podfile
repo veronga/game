@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'game' do
-  # Pods for game
+target 'SmallParty' do
+  # Pods for SmallParty
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -79,7 +79,7 @@ target 'game' do
 
   
 
-  target 'gameTests' do
+  target 'SmallPartyTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -96,10 +96,10 @@ target 'game' do
   end
 end
 
-target 'game-tvOS' do
-  # Pods for game-tvOS
+target 'SmallParty-tvOS' do
+  # Pods for SmallParty-tvOS
 
-  target 'game-tvOSTests' do
+  target 'SmallParty-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
