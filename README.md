@@ -16,7 +16,7 @@
 
 ## About the project 📝
 
-An app for getting to know the other side of your friends.Simple and clear cross platform party apps written in the React Native framework.
+An app for getting to know the other side of your friends. Simple and clear cross-platform party app Built With React Native.
 
 ## Use library 🧠
 
@@ -59,7 +59,7 @@ $  cd ios
 $  pod install
 ```
 
-- Now let's launch the app, but don't forget to log out of the ios folder
+- - Now let's launch the app, but don't forget to return to the main folder
 
 ```
 $  cd ..
