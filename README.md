@@ -6,7 +6,7 @@
 
 ## Table of Contents 🌐
 
-+ [About the project 📝](#about-the-project-📝)
++ [About the project 📝](#about-the-project📝)
 + [Use library](#use-library)
 + [Getting started](#getting-started)
 + [Available command](#available-command)
