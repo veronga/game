@@ -6,7 +6,7 @@
 
 ## Table of Contents 🌐
 
-+ [About the project 📝](#about-the-project)
++ [About the project](#about-the-project)
 + [Use library 🧠](#use-library)
 + [Getting started 🛠](#getting-started)
 + [Available command 💻](#available-command)
@@ -14,7 +14,7 @@
 
 ---
 
-## About the project 📝
+## About the project
 
 An app for getting to know the other side of your friends. Simple and clear cross-platform party app Built With React Native.
 
