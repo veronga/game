@@ -6,11 +6,11 @@
 
 ## Table of Contents 🌐
 
-+ [About the project 📝](#about-the-project📝)
-+ [Use library](#use-library)
-+ [Getting started](#getting-started)
-+ [Available command](#available-command)
-+ [Contact](#contact)
++ [About the project 📝](#about-the-project)
++ [Use library 🧠](#use-library)
++ [Getting started 🛠](#getting-started)
++ [Available command 💻](#available-command)
++ [Contact 🤝🏻](#contact)
 
 ---
 
