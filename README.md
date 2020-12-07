@@ -6,19 +6,19 @@
 
 ## Table of Contents 🌐
 
-+ [About the project](#about-the-project)
-+ [Use library](#use-library)
-+ [Getting started](#getting-started)
-+ [Available command](#available-command)
-+ [Contact](#contact)
++ [About the project 📋](#about-the-project)
++ [Use library 🧠](#use-library)
++ [Getting started 🛠](#getting-started)
++ [Available command 💻](#available-command)
++ [Contact 🤝🏻](#contact)
 
 ---
 
-## About the project 📝
+## About the project
 
-An app for getting to know the other side of your friends.Simple and clear cross platform party apps written in the React Native framework.
+An app for getting to know the other side of your friends. Simple and clear cross-platform party app Built With React Native.
 
-## Use library 🧠
+## Use library
 
 [![](https://img.shields.io/badge/React-v16.11.0-blue)](https://github.com/facebook/react/)
 [![](https://img.shields.io/badge/React%20Native-v0.62.2-informational)](https://github.com/facebook/react-native#readme)
@@ -29,7 +29,7 @@ An app for getting to know the other side of your friends.Simple and clear cross
 [![](https://img.shields.io/badge/React%20Native%20Navigation-v^6.8.0-orange)](https://github.com/wix/react-native-navigation)
 [![](https://img.shields.io/badge/React%20Native%20Animatable-v^1.3.3-critical)](https://github.com/oblador/react-native-animatable)
 
-## Getting started 🛠
+## Getting started
 
 - Copy app
 
@@ -59,7 +59,7 @@ $  cd ios
 $  pod install
 ```
 
-- Now let's launch the app, but don't forget to log out of the ios folder
+- - Now let's launch the app, but don't forget to return to the main folder
 
 ```
 $  cd ..
@@ -69,7 +69,7 @@ $  cd ..
 $  react-native run-[ios|android]
 ```
 
-## Available command 💻
+## Available command
 
 #### Launch on Android
 
@@ -101,7 +101,7 @@ $  react-native run-[ios|android]
  $  npm run test
 ```
 
-## Contact 🤝🏻
+## Contact
 
 [![Linkedin](https://img.shields.io/badge/-Veronika%20Belozechko-blue?style=flat-square&logo=linkedin&logoColor=white&link=https://www.linkedin.com/in/veronika-belozechko-a38933157/)](https://www.linkedin.com/in/veronika-belozechko-a38933157/)
 [![Mail](https://img.shields.io/badge/-veronika.belozechko@gmail.com-gray?style=flat-square&logo=gmail&logoColor=red&link=/)](mailto:veronika.belozechko@gmail.com)
