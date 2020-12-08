@@ -8,9 +8,11 @@ import rootReducer from './src/reducers';
 
 import Reactotron from './src/config/ReactotronConfig';
 
+const enhancers = __DEV__ ? [Reactotron.createEnhancer()] : [];
+
 const store = configureStore({
   reducer: rootReducer,
-  enhancers: [Reactotron.createEnhancer()],
+  enhancers,
 });
 
 export default function App() {
